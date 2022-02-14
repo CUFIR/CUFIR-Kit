@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwap plugin="cufir-plugin-mr">
+	<authors>
+		<author name="TMQ" email="tang_maoquan@synesoft.com.cn" />
+	</authors>
+	<update author="TMQ" since="2.1.0" update="2022-01-28">
+		<item desc="Button封装，国际化支持。" source="JSTACK">
+			<file src="bean/ButtonPolicy.java" type="N" />
+			<file src="bean/DataTypesEnum.java" type="M" />
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="editor/BusinessAreaEditor.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/ExternalSchemasEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditorChooser.java" type="M" />
+			<file src="editor/MessageDefinitionEditorDialogContent.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MessageSetEditor.java" type="M" />
+			<file src="editor/MrEditorDialogCreator.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrRepository.java" type="M" />
+			<file src="editor/SummaryExpandComposite.java" type="M" />
+			<file src="editor/SummaryRowTextComposite.java" type="M" />
+			<file src="handle/MrRepositoryInitProcess.java" type="M" />
+			<file src="view/MrTreeView.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	<update author="TMQ" since="2.0.0" update="2021-12-23">
+		<item desc="MDR3导出部分功能修复，业务组件模块速度优化功能修复,提示语修改，Assign Fresh Name功能优化，子节点打开编辑父节点功能修复，版本绑定功能优化，业务组件Inheritance功能修复，Content界面功能修复。" source="JSTACK">
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditorChooser.java" type="M" />
+			<file src="editor/MrEditorDialogCreator.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrImplManager.java" type="M" />
+			<file src="editor/MrRepository.java" type="M" />
+			<file src="editor/SummaryRowComboComposite.java" type="M" />
+			<file src="editor/SummaryRowTextComposite.java" type="M" />
+			<file src="handle/MrRepositoryInitProcess.java" type="M" />
+			<file src="handle/OpenFileProcess.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/*.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	<update author="TMQ" since="1.0.9" update="2021-12-10">
+		<item desc="启动速度优化，启动界面增加进度条，代码优化。" source="JSTACK">
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrRepository.java" type="M" />
+			<file src="editor/MrSearchMouseAdapter.java" type="M" />
+			<file src="editor/SummaryProgressComposite.java" type="N" />
+			<file src="editor/SummaryRowComboComposite.java" type="M" />
+			<file src="editor/SummaryRowTextComposite.java" type="M" />
+			<file src="handle/IProcessListener.java" type="N" />
+			<file src="handle/MrRepositoryInitProcess.java" type="N" />
+			<file src="handle/OpenFileHandler.java" type="M" />
+			<file src="handle/OpenFileProcess.java" type="M" />
+			<file src="view/MrTreeView.java" type="M" />
+		</item>
+	</update>
+	<update author="TMQ" since="1.0.8" update="2021-11-30">
+		<item desc="新建消息组件、报文增加历史版本关系绑定。基础数据、消息组件、报文增加保存时名称重复验证。基础数据修改导入标签不变，组件、报文导入数据不可修改。部分图标替换，代码优化。" source="JSTACK">
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="bean/RegistrationStatusEnum.java" type="M" />
+			<file src="editor/BusinessAreaEditor.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/ExternalSchemasEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditorChooser.java" type="M" />
+			<file src="editor/MessageSetEditor.java" type="M" />
+			<file src="editor/MrEditorDialogCreator.java" type="M" />
+			<file src="editor/MrMultiPageEditor.java" type="M" />
+			<file src="editor/SummaryRowComboComposite.java" type="M" />
+			<file src="editor/SummaryRowTextComposite.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="utils/ImgUtil.java" type="M" />
+			<file src="view/MrTreeViewHelper.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.7" update="2021-11-24">
+		<item desc="cufir-s-data升级，版本展示bug修复" source="JSTACK">
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrRepository.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.6" update="2021-11-14">
+		<item desc="cufir-s-data升级，dataType保存优化，多线程加载优化" source="JSTACK">
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/MrTreeView.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.5" update="2021-11-10">
+		<item desc="cufir-s-data升级，展示*问题修复，choose卡顿修复，代码优化" source="JSTACK">
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="editor/BusinessAreaEditor.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/ExternalSchemasEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditorChooser.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MessageSetEditor.java" type="M" />
+			<file src="editor/MrEditorDialogCreator.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrEditorTableCreator.java" type="M" />
+			<file src="editor/MrImplManager.java" type="M" />
+			<file src="editor/MrMultiPageEditor.java" type="M" />
+			<file src="editor/MrRepository.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/MrTreeView.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.4" update="2021-11-01">
+		<item desc="cufir-s-data升级，增加数据缓存，代码优化" source="JSTACK">
+			<file src="editor/BusinessAreaEditor.java" type="M" />
+			<file src="editor/BusinessComponentEditor.java" type="M" />
+			<file src="editor/DataTypesEditor.java" type="M" />
+			<file src="editor/ExternalSchemasEditor.java" type="M" />
+			<file src="editor/MessageComponentEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditor.java" type="M" />
+			<file src="editor/MessageDefinitionEditorChooser.java" type="M" />
+			<file src="editor/MessageHelper.java" type="M" />
+			<file src="editor/MessageSetEditor.java" type="M" />
+			<file src="editor/MrEditorDialogCreator.java" type="M" />
+			<file src="editor/MrEditorTreeCreator.java" type="M" />
+			<file src="editor/MrImplManager.java" type="N" />
+			<file src="editor/MrRepository.java" type="N" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/MrTreeView.java" type="M" />
+			<file src="view/MrTreeViewHelper.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.3" update="2021-10-28">
+		<item desc="cufir-s-data，cufir-s-xsd升级，新建增Tag xml元素编辑，for循环内sql抽出，代码优化" source="JSTACK">
+			<file src="editor/*.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/*.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.2" update="2021-10-15">
+		<item desc="cufir-s-data升级，文字展示不全修复，保存功能修复" source="JSTACK">
+			<file src="bean/MrTreeItem.java" type="M" />
+			<file src="editor/*.java" type="M" />
+			<file src="handle/OpenFileHandler.java" type="M" />
+			<file src="handle/OpenFileProcess.java" type="M" />
+			<file src="handle/SaveHandler.java" type="M" />
+			<file src="view/*.java" type="M" />
+			<file src="MrHelper.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.1" update="2021-09-28">
+		<item desc="代码优化重构,包名重構為org.cufir" source="JSTACK">
+			<file src="*.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.0" update="2021-09-15">
+		<item desc="里程碑版本" source="JSTACK"/>
+	</update>
+</cwap>

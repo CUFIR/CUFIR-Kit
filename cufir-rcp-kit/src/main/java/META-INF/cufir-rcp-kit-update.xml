@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwap plugin="cufir-rcp-kit">
+	<authors>
+		<author name="HRJ" email="he_rongjie@synesoft.com.cn" />
+		<author name="TMQ" email="tang_maoquan@synesoft.com.cn" />
+	</authors>
+	
+	<update author="TMQ" since="2.1.0" update="2022-01-19">
+		<item desc="增加主题切换及自定义功能" source="JSTACK">
+			<file src="ApplicationWorkbenchAdvisor.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="2.0.0" update="2021-12-23">
+		<item desc="大版本升级" source="JSTACK">
+			<file src="Activator.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.9" update="2021-12-10">
+		<item desc="启动界面增加进度条，cufir-plugin-mr工程升级" source="JSTACK">
+			<file src="dialogs/*.java" type="M" />
+			<file src="views/CProgressView.java" type="M" />
+			<file src="views/CufirProblemView.java" type="M" />
+			<file src="views/TaskListView.java" type="M" />
+			<file src="Application.java" type="M" />
+			<file src="ApplicationActionBarAdvisor.java" type="M" />
+			<file src="ApplicationConfigurer.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.8" update="2021-11-30">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.7" update="2021-11-24">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.6" update="2021-11-14">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.5" update="2021-11-10">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.4" update="2021-11-01">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.3" update="2021-10-22">
+		<item desc="cufir-plugin-mr工程升级" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.2" update="2021-10-15">
+		<item desc="整合cufir-plugin-mr，代码优化" source="JSTACK">
+			<file src="handler.ModifyAbleHandler.java" type="M" />
+			<file src="handler.RefreshViewHandler.java" type="M" />
+			<file src="handler.TasksHandler.java" type="M" />
+			<file src="Activator.java" type="M" />
+			<file src="ApplicationActionBarAdvisor.java" type="M" />
+			<file src="ApplicationWorkbenchAdvisor.java" type="M" />
+			<file src="AppStart.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.1" update="2021-09-29">
+		<item desc="cufir-plugin-app工程名重构" source="JSTACK"/>
+	</update>
+	
+	<update author="TMQ" since="1.0.0" update="2021-09-15">
+		<item desc="里程碑版本" source="JSTACK"/>
+	</update>
+</cwap>

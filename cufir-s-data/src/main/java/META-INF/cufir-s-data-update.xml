@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cwap plugin="cufir-s-data">
+	<authors>
+		<author name="TMQ" email="tang_maoquan@synesoft.com.cn" />
+	</authors>
+	
+	<update author="TMQ" since="2.0.0" update="2021-12-23">
+		<item desc="优化数据库查询优化，MDR3部分功能修复" source="JSTACK">
+			<file src="bean/EcoreMessageElement.java" type="M" />
+			<file src="bean/EcoreMessageSet.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessElementImpl.java" type="M" />
+			<file src="dao/impl/EcoreCommonImpl.java" type="M" />
+			<file src="dao/impl/EcoreDataTypeImpl.java" type="M" />
+			<file src="dao/impl/EcoreExampleImpl.java" type="M" />
+			<file src="dao/impl/EcoreExternalSchemaImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageBuildingBlockImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageDefinitionImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageElementImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetDefinitionRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetImpl.java" type="M" />
+			<file src="dao/impl/EcoreNextVersionsImpl.java" type="M" />
+			<file src="dao/impl/EcoreSemanticMarkupElementImpl.java" type="M" />
+			<file src="vo/EcoreTreeNode.java" type="M" />
+			<file src="MDR3Mgr.java" type="M" />
+		</item>
+	</update>
+	<update author="TMQ" since="1.0.7" update="2021-12-10">
+		<item desc="优化数据库" source="JSTACK">
+			<file src="dao/impl/EcoreCodeImpl.java" type="M" />
+			<file src="dao/impl/EcoreCommonImpl.java" type="M" />
+			<file src="dao/impl/EcoreDataTypeImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentImpl.java" type="M" />
+			<file src="IAnalysisProcessMonitor.java" type="M" />
+		</item>
+	</update>
+	<update author="TMQ" since="1.0.6" update="2021-11-24">
+		<item desc="优化数据库" source="JSTACK">
+			<file src="dao/impl/EcoreDataTypeImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageDefinitionImpl.java" type="M" />
+			<file src="dao/impl/EcoreNextVersionsImpl.java" type="M" />
+			<file src="iso20022/analysis/BusinessAreaAnalysis.java" type="M" />
+			<file src="iso20022/analysis/BusinessComponentAnalysis.java" type="M" />
+			<file src="iso20022/analysis/BusinessElementAnalysis.java" type="M" />
+			<file src="iso20022/analysis/BusinessProcessAnalysis.java" type="M" />
+			<file src="iso20022/analysis/BusinessRoleAnalysis.java" type="M" />
+			<file src="iso20022/analysis/CodeAnalysis.java" type="M" />
+			<file src="iso20022/analysis/ConstraintAnalysis.java" type="M" />
+			<file src="iso20022/analysis/DataTypeAnalysis.java" type="M" />
+			<file src="iso20022/analysis/ExternalSchemaAnalysis.java" type="M" />
+			<file src="iso20022/analysis/MessageBuildingBlockAnalysis.java" type="M" />
+			<file src="iso20022/analysis/MessageComponentAnalysis.java" type="M" />
+			<file src="iso20022/analysis/MessageDefinitionAnalysis.java" type="M" />
+			<file src="iso20022/analysis/MessageElementAnalysis.java" type="M" />
+			<file src="iso20022/analysis/MessageSetAnalysis.java" type="M" />
+			<file src="util/DbUtil.java" type="M" />
+			<file src="Iso20022Mgr.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.5" update="2021-11-14">
+		<item desc="优化数据库" source="JSTACK">
+			<file src="bean/EcoreConstraint.java" type="M" />
+			<file src="bean/EcoreDataType.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessElementImpl.java" type="M" />
+			<file src="dao/impl/EcoreCodeImpl.java" type="M" />
+			<file src="dao/impl/EcoreConstraintImpl.java" type="M" />
+			<file src="dao/impl/EcoreDataTypeImpl.java" type="M" />
+			<file src="dao/impl/EcoreDocletImpl.java" type="M" />
+			<file src="dao/impl/EcoreExampleImpl.java" type="M" />
+			<file src="dao/impl/EcoreExternalSchemaImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageBuildingBlockImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageDefinitionImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageElementImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetDefinitionRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetImpl.java" type="M" />
+			<file src="dao/impl/EcoreNextVersionsImpl.java" type="M" />
+			<file src="dao/impl/EcoreSemanticMarkupElementImpl.java" type="M" />
+			<file src="iso20022/analysis/ExampleAnalysis.java" type="M" />
+			<file src="util/DbUtil.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.4" update="2021-11-10">
+		<item desc="优化数据库" source="JSTACK">
+			<file src="bean/EcoreBusinessComponent.java" type="M" />
+			<file src="bean/EcoreBusinessComponentRL.java" type="M" />
+			<file src="bean/EcoreBusinessElement.java" type="M" />
+			<file src="bean/EcoreBusinessProcess.java" type="M" />
+			<file src="bean/EcoreCode.java" type="M" />
+			<file src="bean/EcoreConstraint.java" type="M" />
+			<file src="bean/EcoreDataType.java" type="M" />
+			<file src="bean/EcoreExample.java" type="M" />
+			<file src="bean/EcoreExternalSchema.java" type="M" />
+			<file src="bean/EcoreMessageBuildingBlock.java" type="M" />
+			<file src="bean/EcoreMessageComponent.java" type="M" />
+			<file src="bean/EcoreMessageDefinition.java" type="M" />
+			<file src="bean/EcoreMessageElement.java" type="M" />
+			<file src="bean/EcoreMessageSet.java" type="M" />
+			<file src="bean/EcoreMessageSetDefinitionRL.java" type="M" />
+			<file src="bean/EcoreNextVersions.java" type="M" />
+			<file src="bean/EcoreSemanticMarkup.java" type="M" />
+			<file src="bean/EcoreSemanticMarkupElement.java" type="M" />
+			<file src="dao/impl/EcoreBusinessAreaImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessComponentRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreBusinessElementImpl.java" type="M" />
+			<file src="dao/impl/EcoreDataTypeImpl.java" type="M" />
+			<file src="dao/impl/EcoreExampleImpl.java" type="M" />
+			<file src="dao/impl/EcoreExternalSchemaImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageDefinitionImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetDefinitionRLImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetImpl.java" type="M" />
+			<file src="dao/impl/EcoreNextVersionsImpl.java" type="M" />
+			<file src="iso20022/analysis/ExampleAnalysis.java" type="M" />
+			<file src="util/DbUtil.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.3" update="2021-10-29">
+		<item desc="改名去掉dao，代码优化、结构调整" source="JSTACK">
+			<file src="dao/impl/*.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.2" update="2021-10-28">
+		<item desc="增加JdbcTemplate调用数据库" source="JSTACK">
+			<file src="bean/EcoreBusinessComponent.java" type="M" />
+			<file src="bean/EcoreBusinessElement.java" type="M" />
+			<file src="bean/EcoreCode.java" type="M" />
+			<file src="bean/EcoreConstraint.java" type="M" />
+			<file src="bean/EcoreDataType.java" type="M" />
+			<file src="bean/EcoreExternalSchema.java" type="M" />
+			<file src="bean/EcoreMessageBuildingBlock.java" type="M" />
+			<file src="bean/EcoreMessageComponent.java" type="M" />
+			<file src="bean/EcoreMessageDefinition.java" type="M" />
+			<file src="bean/EcoreMessageElement.java" type="M" />
+			<file src="bean/EcoreMessageSet.java" type="M" />
+			<file src="bean/EcoreMessageSetDefinitionRL.java" type="M" />
+			<file src="bean/EcoreSemanticMarkup.java" type="M" />
+			<file src="bean/EcoreSemanticMarkupElement.java" type="M" />
+			<file src="bean/ListRowMapper.java" type="N" />
+			<file src="bean/Table.java" type="N" />
+			<file src="bean/TableColumn.java" type="N" />
+			<file src="bean/TableColumnModel.java" type="N" />
+			<file src="bean/TableModel.java" type="N" />
+			<file src="dao/impl/EcoreBusinessComponentDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreCodeDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreConstraintDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreDataTypeDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreExternalSchemaDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageBuildingBlockDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageComponentDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageDefinitionDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageElementDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreMessageSetDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreSemanticMarkupDaoImpl.java" type="M" />
+			<file src="dao/impl/EcoreSemanticMarkupElementDaoImpl.java" type="M" />
+			<file src="test/Test.java" type="M" />
+			<file src="util/DbUtil.java" type="N" />
+			<file src="util/DerbyUtil.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.1" update="2021-09-30">
+		<item desc="代码优化重构,包名重構為org.cufir" source="JSTACK">
+			<file src="*.java" type="M" />
+		</item>
+	</update>
+	
+	<update author="TMQ" since="1.0.0" update="2021-09-15">
+		<item desc="里程碑版本" source="JSTACK"/>
+	</update>
+</cwap>

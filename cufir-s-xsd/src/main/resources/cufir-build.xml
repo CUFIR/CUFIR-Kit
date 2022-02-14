@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="cufir" basedir="." default="build">
+	
+	<property file="cufir-build.properties" />
+	<property name="root" value="http://172.17.242.168/svn/CUFIR/" />
+	
+	<target name="unzip">
+  		<available file="cufir-build.properties" property="cufir-build.exist" /> 
+  		<echo>file exist : ${cufir-build.exist}</echo>   
+  	</target>
+
+	<target name="clean" depends="unzip">
+		<echo>delete ${root}/tags/${sonar.projectName}/${pom_version}</echo>
+		<exec executable="cmd.exe">
+            <arg line="/c svn delete ${root}/tags/${sonar.projectName}/${pom_version} -m 'delete' "/>
+		</exec>	
+	</target>
+	
+	<target name="mkdir" depends="clean">
+			<echo>mkdir ${root}/tags/${sonar.projectName}</echo>
+			<exec executable="cmd.exe">
+				<arg line="/c svn mkdir ${root}/tags/${sonar.projectName} -m 'create file ${sonar.projectName}' "/>
+			</exec>	
+		</target>
+	
+	<target name="build" depends="mkdir">
+		<echo>${sonar.projectName} will be tag of svn..</echo>
+		<echo>source file : ${root}/${sonar.projectName}</echo>
+		<echo>goal file : ${root}/tags/${sonar.projectName}/${pom_version}</echo>
+		<exec executable="cmd.exe">
+            <arg line="/c svn cp ${root}/${sonar.projectName} ${root}/tags/${sonar.projectName}/${pom_version} -m 'release ${pom_version}' "/>
+		</exec>
+	</target>
+	
+</project>
