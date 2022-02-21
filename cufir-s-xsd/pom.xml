@@ -16,7 +16,7 @@
 	<name>cufir-s-xsd</name>
 	<description>cufir xsd 文件解析和生成导出</description>
 	<packaging>jar</packaging>
-
+ 
 	<properties>
 		<junit.version>4.12</junit.version>
 	</properties>

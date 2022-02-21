@@ -15,7 +15,7 @@
 	<name>cufir-plugin-mr</name>
 	<description>cufir plugin 报文管理和、编辑、展示 等 </description>
 	<packaging>jar</packaging>
-
+ 
 	<dependencies>
 		<!-- cufir -->
 		<dependency>

@@ -17,7 +17,6 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.cufir</groupId>
 			<artifactId>cufir-plugin-mr</artifactId>
