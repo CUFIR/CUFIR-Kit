@@ -26,9 +26,9 @@ CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰�
 
 #### 电子库
 
-[电子储存库下载地址](https://www.iso20022.org/iso20022-repository/e-repository)
+[iso20022电子储存库下载地址](https://www.iso20022.org/iso20022-repository/e-repository)
 
-导入iso20022电子储存库更新线下库
+导入iso20022电子储存库,更新线下库
 
 浏览器访问电子储存库地址，点击如下图所示红框内的蓝色箭头下载电子储存库的压缩包
 ![image-20220222133621275](https://user-images.githubusercontent.com/97862260/155097952-c7327a47-0874-47aa-82df-bfe232dd6c5e.png)
