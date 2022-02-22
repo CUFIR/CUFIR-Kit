@@ -145,7 +145,8 @@ CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰�
 
 ### 组件
 
-![image-20220222102450887](https://user-images.githubusercontent.com/97862260/155104151-b3a34bfe-e7a5-45bf-b16d-cee84811b65a.png)
+![1645525248](https://user-images.githubusercontent.com/97862260/155115926-ab839862-df14-4f7c-b734-adfe402a724d.jpg)
+
 
 ### 用户
 
