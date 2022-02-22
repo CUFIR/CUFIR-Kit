@@ -95,4 +95,22 @@ CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰�
 
 ![image-20220222153106048](https://user-images.githubusercontent.com/97862260/155101107-bc1dfb3e-659f-4316-9996-c4a5e983572e.png)
 
+#### Business Areas
 
+右键点击Business Areas可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+
+![image-20220222153716113](https://user-images.githubusercontent.com/97862260/155102519-961c5f4b-5bc6-4033-8820-450f098d6262.png)
+
+选择Content界面可添加编辑删除当前节点的子节点数据（例如Message Definition）
+
+![image-20220222153804532](https://user-images.githubusercontent.com/97862260/155102565-aa412dc5-21c0-4345-944e-72f1f5c051c2.png)
+
+#### Message Sets
+
+右键点击Message Sets可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+
+![image-20220222154015901](https://user-images.githubusercontent.com/97862260/155102608-e52a8441-f4cb-4dfd-b047-b57e9483aa36.png)
+
+选择Content界面可添加编辑删除当前节点的子节点数据（例如Message Definition）
+
+![image-20220222154052664](https://user-images.githubusercontent.com/97862260/155102655-70af625b-8253-4524-b233-8d5da73f4397.png)
