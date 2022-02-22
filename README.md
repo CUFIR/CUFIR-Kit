@@ -114,3 +114,29 @@ CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰�
 选择Content界面可添加编辑删除当前节点的子节点数据（例如Message Definition）
 
 ![image-20220222154052664](https://user-images.githubusercontent.com/97862260/155102655-70af625b-8253-4524-b233-8d5da73f4397.png)
+
+#### Message Definitions
+
+右键点击Message Definitions可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+
+![image-20220222154221822](https://user-images.githubusercontent.com/97862260/155102792-221ad450-ea7a-4977-9aee-d695480b3bd5.png)
+
+选择Content界面可添加编辑删除当前节点的子节点数据（例如Data Tape、Message Component）
+
+![image-20220222154300114](https://user-images.githubusercontent.com/97862260/155102837-3b5b322c-1658-4438-85af-7e423bf77cdb.png)
+
+选择Business Trace可查看子节点的追溯信息
+
+![image-20220222154544733](https://user-images.githubusercontent.com/97862260/155102940-ff5a0dc1-1959-46b8-b172-b783cafbdbab.png)
+
+选择Impact Analysis界面可查看Message Sets、Message Areas两个模块中的这个报文的所属情况
+
+![image-20220222154617343](https://user-images.githubusercontent.com/97862260/155102990-d72c275d-855e-4d45-b723-2f0501c26bdf.png)
+
+选择Version/Subsets界面可查看版本关联
+
+![image-20220222154907246](https://user-images.githubusercontent.com/97862260/155103063-dc3d401f-af68-4508-9d84-d8327764a8bc.png)
+
+右键点击报文可导出xsd、excel、MDR3，三种格式的报文供使用
+
+![image-20220222155844078](https://user-images.githubusercontent.com/97862260/155103145-7caf3a24-d0b4-428b-ab9a-34bd53e74a42.png)
