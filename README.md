@@ -150,6 +150,6 @@ CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰�
 
 ### 用户
 
-- #### CFETS
+- #### [CFETS](https://www.chinamoney.com.cn/)
 
-- #### CIPS
+- #### [CIPS](https://www.cips.com.cn/)
