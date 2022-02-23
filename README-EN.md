@@ -32,7 +32,7 @@ Import the download address of the electronic repository into the iso20022 elect
 The browser accesses the address of the electronic repository, and click the blue arrow in the red box as shown in the figure below to download the compressed package of the electronic repository.
 ![image-20220222133621275](https://user-images.githubusercontent.com/97862260/155097952-c7327a47-0874-47aa-82df-bfe232dd6c5e.png)
 
-#### 导入
+#### Import
 
 - Import electronic library to CUFIR Kit offline tool
 
@@ -41,69 +41,69 @@ Open CUFIR Kit click file in the upper left corner, and then click Open... In th
 
 #### Data Types
 
-Support all basic data types used by the message, such as（code Sets、Text、Boolean、Indicator、Decimal、Rate、Amount、Quantity、Time、Binary、Schema Types、User Defined）
+Support all basic data types used by the message, such as（code Sets、Text、Boolean、Indicator、Decimal、Rate、Amount、Quantity、Time、Binary、Schema Types、User Defined）.
 
 ![image-20220222150104320](https://user-images.githubusercontent.com/97862260/155098444-0f8bd526-06d8-4903-aee5-c164f16ba9ce.png)
 
-Right click the secondary tree node. For example, code sets can create a new child node. Double click the tertiary node to view or edit it. The Summary interface is expanded by default
+Right click the secondary tree node. For example, code sets can create a new child node. Double click the tertiary node to view or edit it. The Summary interface is expanded by default.
 
 ![image-20220222151047552](https://user-images.githubusercontent.com/97862260/155098526-03e1bb1c-afb3-42b2-96e5-e77426259b69.png)
 
-Select the Content interface to add, edit and delete the child node data of the current node
+Select the Content interface to add, edit and delete the child node data of the current node.
 
 ![image-20220222151210892](https://user-images.githubusercontent.com/97862260/155098585-1382bbbc-7ddc-4b14-ab69-4895ccd0a9d7.png)
 
-选择Impact界面可查看Message Sets、Message Definitions、Message Component三个模块中的这个数据类型的所属情况
+Select Impact interface to view Message Sets、Message Definitions、Message Component the data type of the three modules belongs to.
 
 ![image-20220222151556231](https://user-images.githubusercontent.com/97862260/155098686-1eceed98-4778-4341-a3e8-6f385ea61d14.png)
 
 #### Business Components
 
-右键点击Business Components可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+Right click Business Components to create a new child node. Double click its child node to view or edit it. The Summary interface is expanded by default.
 
 ![image-20220222152435520](https://user-images.githubusercontent.com/97862260/155098767-1e672e19-94c9-4f93-959e-bb2bcd9abe4d.png)
 
-选择Content界面可添加编辑删除当前节点的子节点数据
+Select the Content interface to add, edit and delete the child node data of the current node.
 
 ![image-20220222152606412](https://user-images.githubusercontent.com/97862260/155098842-22f2c1ad-aafb-40d6-82e3-d47799b5da5a.png)
 
-选择Impact界面可查看Message Sets、Message Definitions、Message Component三个模块中的这个业务组件的所属情况
+Select Impact interface to view Message Sets、Message Definitions、Message Component the business component of the three modules belongs to
 
 ![image-20220222152632242](https://user-images.githubusercontent.com/97862260/155098904-586ecc58-9650-41cb-b709-3420d35c877b.png)
 
-选择Impact Analysis界面可查看其他Business Component中对这个业务组件的管所属情况
+Select the Impact Analysis interface to view other Business Component the management status of this business component in
 
 ![image-20220222155110923](https://user-images.githubusercontent.com/97862260/155100683-53ba5ac7-01a2-4c25-b83e-09c8e90a466c.png)
 
 #### Message Components
 
-右键点击Message Components可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+Right click Message Components to create a new child node. Double click its child node to view or edit it. The Summary interface is expanded by default
 
 ![image-20220222152912039](https://user-images.githubusercontent.com/97862260/155100795-f7bfc07d-c532-470c-b795-d0e040c5c1b4.png)
 
-选择Content界面可添加编辑删除当前节点的子节点数据（例如Data Tape、Message Component）
+Select the Content interface to add, edit and delete the child node data of the current node（例如Data Tape、Message Component）.
 
 ![image-20220222152931479](https://user-images.githubusercontent.com/97862260/155100867-234ec8bd-9e20-4182-8284-6a2dc8b491e8.png)
 
-选择Business Trace界面可查看绑定的相关Business Components、Business Element
+Select the Business Trace interface to view the related information of the binding Business Components、Business Element
 
 ![image-20220222153020090](https://user-images.githubusercontent.com/97862260/155100928-b131d246-c05a-42d8-9ffc-00d8ad7243c4.png)
 
-选择Impact Anyalysis界面可查看Message Sets、Message Definitions、Message Component三个模块中的这个报文组件的所属情况
+Select Impact Analysis interface to view Message Sets、Message Definitions、Message Component the status of this message component in the three modules
 
 ![image-20220222153045829](https://user-images.githubusercontent.com/97862260/155101027-16a1153e-3ef7-4d07-8e0e-d75c58ad495b.png)
 
-选择Version/Subsets界面可查看版本关联
+Select Version/Subsets version association can be viewed in the interface
 
 ![image-20220222153106048](https://user-images.githubusercontent.com/97862260/155101107-bc1dfb3e-659f-4316-9996-c4a5e983572e.png)
 
 #### Business Areas
 
-右键点击Business Areas可新建子节点，双击其子节点可进行查看或编辑，默认展开Summary界面
+Right click Business Areas to create a new child node. Double click its child node to view or edit it. The Summary interface is expanded by default
 
 ![image-20220222153716113](https://user-images.githubusercontent.com/97862260/155102519-961c5f4b-5bc6-4033-8820-450f098d6262.png)
 
-选择Content界面可添加编辑删除当前节点的子节点数据（例如Message Definition）
+Select the Content interface to add, edit and delete the child node data of the current node（例如Message Definition）.
 
 ![image-20220222153804532](https://user-images.githubusercontent.com/97862260/155102565-aa412dc5-21c0-4345-944e-72f1f5c051c2.png)
 
@@ -123,7 +123,7 @@ Select the Content interface to add, edit and delete the child node data of the 
 
 ![image-20220222154221822](https://user-images.githubusercontent.com/97862260/155102792-221ad450-ea7a-4977-9aee-d695480b3bd5.png)
 
-选择Content界面可添加编辑删除当前节点的子节点数据（例如Data Tape、Message Component）
+Select the Content interface to add, edit and delete the child node data of the current node（例如Data Tape、Message Component）.
 
 ![image-20220222154300114](https://user-images.githubusercontent.com/97862260/155102837-3b5b322c-1658-4438-85af-7e423bf77cdb.png)
 
