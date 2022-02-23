@@ -1,7 +1,7 @@
 # CUFIR-Kit 
 ![welcome_bg](https://user-images.githubusercontent.com/97862260/155096544-d6f1bf11-3438-4b97-bc33-e7c5df3b2644.png)
 
-### 介绍
+### Introduce
 
 CUFIR Kit The development tool is a lightweight message modeling tool, which provides rich modeling and architecture design methods. Through the development tool, the message structure and message standard data type can be easily defined.
 
@@ -10,26 +10,26 @@ CUFIR Kit The development tool is a lightweight message modeling tool, which pro
 3. Specification support：ISO20022、CUFIR
 4. Technical realization：Eclipse Plugin/RCP、Derby、SWT、ECORE……
 
-### 安装
+### Install
 
-[CUFIR Kit开发工具下载地址](https://www.cufir.org.cn/cufir/developmentTool.html)
+[CUFIR Kit Download address of development tools](https://www.cufir.org.cn/cufir/developmentTool.html)
 
-### 使用
+### Use
 
-#### 启动
+#### Startup
 
-下载并解压CUFIR Kit，双击cufir.exe启动。
+Download and unzip CUFIR Kit，double-click cufir.exe Startup.
 
 ![image-20220222111729053](https://user-images.githubusercontent.com/97862260/155104587-2173971d-c81f-43a2-9509-0f05d322e724.png)
 
 
-#### 电子库
+#### Electronic Library
 
-[iso20022电子储存库下载地址](https://www.iso20022.org/iso20022-repository/e-repository)
+[iso20022 Electronic repository download address](https://www.iso20022.org/iso20022-repository/e-repository)
 
-导入iso20022电子储存库,更新线下库
+Import the download address of the electronic repository into the iso20022 electronic repository and update the offline repository
 
-浏览器访问电子储存库地址，点击如下图所示红框内的蓝色箭头下载电子储存库的压缩包
+The browser accesses the address of the electronic repository, and click the blue arrow in the red box as shown in the figure below to download the compressed package of the electronic repository
 ![image-20220222133621275](https://user-images.githubusercontent.com/97862260/155097952-c7327a47-0874-47aa-82df-bfe232dd6c5e.png)
 
 #### 导入
