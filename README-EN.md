@@ -3,12 +3,12 @@
 
 ### 介绍
 
-CUFIR Kit开发工具是一个轻量级的报文建模工具，它提供了丰富的建模和架构设计的方法，通过开发工具可以方便的定义报文结构，以及报文标准数据类型等。
+CUFIR Kit The development tool is a lightweight message modeling tool, which provides rich modeling and architecture design methods. Through the development tool, the message structure and message standard data type can be easily defined.
 
-1. 环境支持：Windows
-2. 功能支持：消息报文模板创建、自定义数据类型、报文元素、报文组件等
-3. 规范支持：ISO20022、CUFIR
-4. 技术实现：Eclipse Plugin/RCP、Derby、SWT、ECORE……
+1. Environmental support: Windows
+2. Function support: message template creation, user-defined data type, message element, message component, etc
+3. Specification support：ISO20022、CUFIR
+4. Technical realization：Eclipse Plugin/RCP、Derby、SWT、ECORE……
 
 ### 安装
 
