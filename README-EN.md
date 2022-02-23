@@ -27,29 +27,29 @@ Download and unzip CUFIR Kit，double-click cufir.exe Startup.
 
 [iso20022 Electronic repository download address](https://www.iso20022.org/iso20022-repository/e-repository)
 
-Import the download address of the electronic repository into the iso20022 electronic repository and update the offline repository
+Import the download address of the electronic repository into the iso20022 electronic repository and update the offline repository.
 
-The browser accesses the address of the electronic repository, and click the blue arrow in the red box as shown in the figure below to download the compressed package of the electronic repository
+The browser accesses the address of the electronic repository, and click the blue arrow in the red box as shown in the figure below to download the compressed package of the electronic repository.
 ![image-20220222133621275](https://user-images.githubusercontent.com/97862260/155097952-c7327a47-0874-47aa-82df-bfe232dd6c5e.png)
 
 #### 导入
 
-- 导入电子库到CUFIR Kit线下工具
+- Import electronic library to CUFIR Kit offline tool
 
-打开CUFIR Kit点击左上角的File，打开后点击菜单中的Open...，选择解压后的电子储存库，进行导入操作。
+Open CUFIR Kit click file in the upper left corner, and then click Open... In the menu, Select the extracted electronic repository to import.
 ![image-20220222133050627](https://user-images.githubusercontent.com/97862260/155098237-0488be17-401f-47a9-a3df-d398b7a46c56.png)
 
 #### Data Types
 
-支持报文使用的所有基本数据类型如（code Sets、Text、Boolean、Indicator、Decimal、Rate、Amount、Quantity、Time、Binary、Schema Types、User Defined）
+Support all basic data types used by the message, such as（code Sets、Text、Boolean、Indicator、Decimal、Rate、Amount、Quantity、Time、Binary、Schema Types、User Defined）
 
 ![image-20220222150104320](https://user-images.githubusercontent.com/97862260/155098444-0f8bd526-06d8-4903-aee5-c164f16ba9ce.png)
 
-右键点击二级树节点，例如Code Sets可新建子节点，双击三级节点可进行查看或编辑，默认展开Summary界面
+Right click the secondary tree node. For example, code sets can create a new child node. Double click the tertiary node to view or edit it. The Summary interface is expanded by default
 
 ![image-20220222151047552](https://user-images.githubusercontent.com/97862260/155098526-03e1bb1c-afb3-42b2-96e5-e77426259b69.png)
 
-选择Content界面可添加编辑删除当前节点的子节点数据
+Select the Content interface to add, edit and delete the child node data of the current node
 
 ![image-20220222151210892](https://user-images.githubusercontent.com/97862260/155098585-1382bbbc-7ddc-4b14-ab69-4895ccd0a9d7.png)
 
