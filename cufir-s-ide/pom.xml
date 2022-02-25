@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>org.cufir</groupId>
+		<artifactId>cufir-plugin-dev</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>cufir-s-ide</artifactId>
+	<version>1.0.0</version>
+	<name>cufir-s-ide</name>
+	<description>RCP-UI相关的开发工具</description>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.6</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.platform</groupId>
+		    <artifactId>org.eclipse.core.runtime</artifactId>
+		    <version>3.15.100</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		    <exclusions>
+				<exclusion>
+					<groupId>org.eclipse.platform</groupId>
+		  			<artifactId>org.eclipse.equinox.common</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.eclipse.platform</groupId>
+  					<artifactId>org.eclipse.equinox.registry</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.eclipse.platform</groupId>
+  					<artifactId>org.eclipse.core.jobs</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+		  	<artifactId>org.eclipse.equinox.common</artifactId>
+			<version>3.10.200</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+  			<artifactId>org.eclipse.core.jobs</artifactId>
+			<version>3.10.200</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		
+	</dependencies>
+</project>
