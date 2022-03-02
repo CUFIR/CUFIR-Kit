@@ -13,7 +13,7 @@ public class Activator extends AbstractUIPlugin {
 
 	public final static String CUFIR_DATE = "since 2019";
 
-	public final static String CUFIR_VERSION = "2.1.0";
+	public final static String CUFIR_VERSION = "1.0.0";
 
 	public final static String CUFIR_URL = "http://192.168.212.221/index";
 
