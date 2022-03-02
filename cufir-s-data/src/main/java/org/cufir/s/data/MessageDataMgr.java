@@ -11,19 +11,14 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.cufir.s.data.dao.impl.EcoreMessageDefinitionImpl;
-import org.cufir.s.data.util.XmlUtil;
 import org.cufir.s.data.vo.EcoreDocumentTreeNode;
+import org.cufir.s.ide.XmlUtil;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-/**
- * 报文数据处理
- * @author tangmaoquan
- * @Date 2021年10月15日
- */
 public class MessageDataMgr {
 	
 	static HSSFWorkbook wb=null;

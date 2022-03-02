@@ -9,8 +9,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析BusinessComponentRL
- * @author zqh
- *
  */
 public class BusinessComponentRLAnalysis {
 

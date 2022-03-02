@@ -14,8 +14,6 @@ import org.cufir.s.data.vo.EcoreTreeNode;
 
 /**
  * MessagesTree点击监听
- * @author tangmaoquan
- * @Date 2021年9月18日
  */
 public class MessagesTreeClickListener implements Listener {
 

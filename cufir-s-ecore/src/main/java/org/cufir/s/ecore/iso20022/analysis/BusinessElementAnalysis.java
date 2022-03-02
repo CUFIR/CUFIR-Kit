@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析BusinessElement
- * @author zqh
- *
  */
 public class BusinessElementAnalysis {
 

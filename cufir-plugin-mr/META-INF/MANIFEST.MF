@@ -46,8 +46,10 @@ Bundle-ClassPath: .,
  lib/spring-tx-5.2.7.RELEASE.jar,
  lib/cufir-s-data-1.0.0.jar,
  lib/cufir-s-ecore-1.0.0.jar,
- lib/cufir-s-xsd-1.0.0.jar,
- lib/cufir-s-ide-1.0.0.jar
+ lib/cufir-s-ide-1.0.0.jar,
+ lib/cufir-s-xsd-1.0.0.jar
 Export-Package: org.cufir.plugin.mr,
+ org.cufir.plugin.mr.bean,
  org.cufir.plugin.mr.editor,
- org.cufir.plugin.mr.handlers
+ org.cufir.plugin.mr.handlers,
+ org.cufir.plugin.mr.view

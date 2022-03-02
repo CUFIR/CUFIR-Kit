@@ -4,8 +4,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.editor.MrRepository;
-import org.cufir.plugin.mr.utils.ImgUtil;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -24,8 +24,6 @@ import org.eclipse.ui.part.ViewPart;
 
 /**
  * 树视图
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrTreeView extends ViewPart {
 	
@@ -143,10 +141,5 @@ public class MrTreeView extends ViewPart {
 	@Override
 	public void setFocus() {
 
-	}
-
-	@Override
-	public Object getAdapter(Class adapter) {
-		return null;
 	}
 }

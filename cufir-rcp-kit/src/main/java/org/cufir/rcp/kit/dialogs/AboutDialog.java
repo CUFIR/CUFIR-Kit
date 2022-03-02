@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import org.cufir.rcp.kit.Activator;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -17,12 +18,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
-import org.cufir.s.ide.utils.i18n.I18nApi;
-
 /**
  * About Cufir
- * @author hrj
- * @Date 2021年10月15日
  */
 public class AboutDialog extends Dialog {
 

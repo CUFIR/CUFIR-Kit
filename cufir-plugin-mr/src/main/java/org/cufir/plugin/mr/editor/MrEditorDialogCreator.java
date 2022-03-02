@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.DataTypesEnum;
@@ -16,8 +17,7 @@ import org.cufir.plugin.mr.bean.TreeItemDataBean;
 import org.cufir.plugin.mr.bean.TreeLevelEnum;
 import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.s.data.vo.EcoreTreeNode;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreBusinessComponentRL;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
@@ -26,8 +26,7 @@ import org.cufir.s.ecore.bean.EcoreDataType;
 import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
@@ -59,8 +58,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * 消息框（树功能、右侧窗口按钮等公用窗口功能）
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorDialogCreator {
 	
@@ -88,7 +85,7 @@ public class MrEditorDialogCreator {
 		
 		CLabel contextLabel = new CLabel(c, SWT.NONE);
 		contextLabel.setImage(Display.getDefault().getSystemImage(SWT.ICON_ERROR));
-		contextLabel.setText(I18nApi.get("tips.md.error.name.three"));
+		contextLabel.setText(I18nApi.get("tips.error.name.repeat"));
 		contextLabel.setBounds(10, 5, 260, 70);
 		
 		Button finishButton = new SummaryRowTextComposite(c, new ButtonPolicy(ButtonPolicy.BUTTON_CONTENT_TYPE_PUSH_DEEP,"OK")).getButton();
@@ -668,7 +665,7 @@ public class MrEditorDialogCreator {
 		synonymsWindow.setText("select type");
 
 		// 改变弹窗位置
-		SystemUtil.center(synonymsWindow);
+		MrHelper.center(synonymsWindow);
 
 		Composite parentComp = new Composite(synonymsWindow, SWT.NONE);
 		parentComp.setBounds(0, 0, 400, 600);
@@ -1137,7 +1134,7 @@ public class MrEditorDialogCreator {
 		messageComponentWindow.setLayout(new FormLayout());
 
 		// 改变弹窗位置
-		SystemUtil.center(messageComponentWindow);
+		MrHelper.center(messageComponentWindow);
 
 		Composite c = new Composite(messageComponentWindow, SWT.NONE);
 		Text searchText = new Text(c, SWT.BORDER);
@@ -1280,7 +1277,7 @@ public class MrEditorDialogCreator {
 		messageComponentWindow.setText("Select Message Element type:");
 		messageComponentWindow.setLayout(new FormLayout());
 		// 改变弹窗位置
-		SystemUtil.center(messageComponentWindow);
+		MrHelper.center(messageComponentWindow);
 		Composite c = new Composite(messageComponentWindow, SWT.NONE);
 		Text searchText = new Text(c, SWT.BORDER);
 		searchText.setBounds(10, 10, 270, 30);
@@ -1376,7 +1373,7 @@ public class MrEditorDialogCreator {
 		synonymsWindow.setText("select type");
 
 		// 改变弹窗位置
-		SystemUtil.center(synonymsWindow);
+		MrHelper.center(synonymsWindow);
 
 		Composite parentComp = new Composite(synonymsWindow, SWT.NONE);
 		parentComp.setBounds(0, 0, 400, 600);
@@ -1529,7 +1526,7 @@ public class MrEditorDialogCreator {
 		synonymsWindow.setText("select type");
 
 		// 改变弹窗位置
-		SystemUtil.center(synonymsWindow);
+		MrHelper.center(synonymsWindow);
 
 		Composite parentComp = new Composite(synonymsWindow, SWT.NONE);
 		parentComp.setBounds(0, 0, 400, 600);
@@ -1618,7 +1615,7 @@ public class MrEditorDialogCreator {
 		businessComponentWindow.setLayout(new FormLayout());
 
 		// 改变弹窗位置
-		SystemUtil.center(businessComponentWindow);
+		MrHelper.center(businessComponentWindow);
 
 		Composite c = new Composite(businessComponentWindow, SWT.NONE);
 		Text searchText = new Text(c, SWT.BORDER);
@@ -1694,7 +1691,7 @@ public class MrEditorDialogCreator {
 		businessElementWindow.setText("Define semantics");
 
 		// 改变弹窗位置
-		SystemUtil.center(businessElementWindow);
+		MrHelper.center(businessElementWindow);
 
 		Composite c = new Composite(businessElementWindow, SWT.NONE);
 		GridData gr = new GridData();
@@ -1707,7 +1704,7 @@ public class MrEditorDialogCreator {
 
 		Composite msgComponentTable = new Composite(c, SWT.BORDER | SWT.MULTI);
 		msgComponentTable.setBounds(10, 40, 450, 580);
-		msgComponentTable.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+		msgComponentTable.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 		msgComponentTable.setLayout(new FillLayout(SWT.HORIZONTAL));
 
 		Tree elementsTree = new Tree(msgComponentTable, SWT.BORDER | SWT.V_SCROLL);

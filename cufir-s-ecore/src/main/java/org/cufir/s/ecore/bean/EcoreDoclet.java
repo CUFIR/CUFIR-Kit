@@ -4,6 +4,9 @@ import java.util.Date;
 
 import lombok.Data;
 
+/**
+ * EcoreDoclet
+ */
 @Data
 public class EcoreDoclet {
 

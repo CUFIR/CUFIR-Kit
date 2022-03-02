@@ -11,13 +11,12 @@ import java.util.stream.Collectors;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.MrTreeItem;
 import org.cufir.plugin.mr.bean.TreeMenuEnum;
-import org.cufir.plugin.mr.handlers.MrRepositoryInitProcess;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.plugin.mr.handlers.MrRepositoryInitProgress;
 import org.cufir.plugin.mr.view.BusinessModelTreeClickListener;
 import org.cufir.plugin.mr.view.MessageComponentsTreeClickListener;
 import org.cufir.plugin.mr.view.MessagesTreeClickListener;
 import org.cufir.plugin.mr.view.MrTreeViewHelper;
-import org.cufir.s.data.IAnalysisProcessMonitor;
+import org.cufir.s.data.IAnalysisProgressMonitor;
 import org.cufir.s.data.vo.EcoreTreeNode;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
@@ -34,7 +33,7 @@ import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
@@ -48,8 +47,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * 数据仓库
- * @author tangmaoquan
- * @Date 2021年10月28日
  */
 public class MrRepository{
 
@@ -132,7 +129,7 @@ public class MrRepository{
 	 * @param iapm
 	 * @param summaryProgressComposite
 	 */
-	public void init(MrRepositoryInitProcess iapm, ProgressBar pb) {
+	public void init(MrRepositoryInitProgress iapm, ProgressBar pb) {
 		try {
 			//同步更新进度条
 			pb.getDisplay().asyncExec(new Runnable() {
@@ -146,7 +143,6 @@ public class MrRepository{
 			});
 			getNodes();
 		} catch (Exception e) {
-			SystemUtil.handle(e);
 			e.printStackTrace();
 		}
 	}
@@ -162,7 +158,6 @@ public class MrRepository{
 			getNodes();
 			setNodes();
 		} catch (Exception e) {
-			SystemUtil.handle(e);
 			e.printStackTrace();
 		}
 	}
@@ -285,7 +280,7 @@ public class MrRepository{
 	/**
 	 * 初始化数据
 	 */
-	private void initData(IAnalysisProcessMonitor iapm) {
+	private void initData(IAnalysisProgressMonitor iapm) {
 		ecoreBusinessComponents = MrImplManager.get().getEcoreBusinessComponentImpl().findAll();
 		iapm.info("EcoreBusinessComponent init OK", 5);
 		ecoreBusinessElements = MrImplManager.get().getEcoreBusinessElementImpl().findAll();

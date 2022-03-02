@@ -6,12 +6,12 @@ import java.awt.Toolkit;
 import java.net.URI;
 import java.util.Date;
 
-import org.cufir.plugin.mr.editor.SummaryProgressComposite;
-import org.cufir.plugin.mr.handlers.IProcessListener;
-import org.cufir.plugin.mr.handlers.MrRepositoryInitProcess;
+import org.cufir.plugin.mr.handlers.IProgressListener;
+import org.cufir.plugin.mr.handlers.MrRepositoryInitProgress;
+import org.cufir.plugin.mr.handlers.ProgressComposite;
 import org.cufir.rcp.kit.Activator;
 import org.cufir.rcp.kit.ApplicationWorkbenchAdvisor;
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
@@ -28,10 +28,8 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * 启动界面
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
-public class SplashDialog implements IProcessListener  {
+public class SplashDialog implements IProgressListener  {
 
 	private Shell shell;
 	private int width = 600;
@@ -41,7 +39,7 @@ public class SplashDialog implements IProcessListener  {
 	private Label dateSpaceLb, tipsLb, btnLb;
 	private Link officialLk;
 	
-	private SummaryProgressComposite summaryProgressComposite;
+	private ProgressComposite summaryProgressComposite;
 
 	public SplashDialog(Shell s) {
 		shell = s;
@@ -75,7 +73,7 @@ public class SplashDialog implements IProcessListener  {
 		parent.setBackgroundMode(SWT.INHERIT_FORCE);
 		parent.setBounds(0, 0, width, height);
 		parent.setBackgroundImage(splash);
-		summaryProgressComposite = new SummaryProgressComposite(parent);
+		summaryProgressComposite = new ProgressComposite(parent);
 		
 		//设置颜色
 		Color white = new Color(display, 255, 255, 255);
@@ -165,7 +163,7 @@ public class SplashDialog implements IProcessListener  {
 //			String expired = Configuration.getInstance().getValue("cufir.expired");
 //			String sign = Configuration.getInstance().getSign("cufir.signature");
 //			String text = publisher + "" + deptcode + "" + expired;
-			// 1 公钥验证签名是否过期
+//			// 1 公钥验证签名是否过期
 //			if (valid(text, sign)) {
 //				// 签名未过期
 //				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -198,8 +196,8 @@ public class SplashDialog implements IProcessListener  {
 
 	private void initMr() {
 		// 同步
-		MrRepositoryInitProcess mip = new MrRepositoryInitProcess(this, summaryProgressComposite);
-		mip.process();
+		MrRepositoryInitProgress mip = new MrRepositoryInitProgress(this, summaryProgressComposite);
+		mip.progress();
 	}
 	
 	private void closeShell() {
@@ -228,28 +226,6 @@ public class SplashDialog implements IProcessListener  {
 		officialLk.setVisible(true);
 	}
 
-	/**
-	 * Md5 验证
-	 * 
-	 * @param text  明文（机构代码 ）
-	 * @param key   密钥
-	 * @param miWen 密文
-	 * @return
-	 */
-//	private boolean valid(String text, String sign) {
-//
-//		try {
-//			// 1 获取公钥
-//			String publicKey = FileUtil.getClassPath(this.getClass(), "src/main/resources/publicKey.license");
-//			// 2 验签
-//			boolean verify = RSAUtils.verify(text.getBytes(), publicKey, sign);
-//			return verify;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return false;
-//	}
-
 	///////////////////////////////////////////////////////////////
 	/**
 	 * 获得两个日期之间的天数差
@@ -276,7 +252,7 @@ public class SplashDialog implements IProcessListener  {
 	}
 
 	@Override
-	public void onProcessing(String info, int percent) {
+	public void onProgressing(String info, int percent) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ComboPolicy;
@@ -17,10 +18,11 @@ import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
 import org.cufir.plugin.mr.bean.TreeLevelEnum;
+import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.NumberUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.s.data.vo.EcoreCodeVO;
+import org.cufir.s.data.vo.EcoreDataTypeVO;
+import org.cufir.s.data.vo.EcoreTreeNode;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreCode;
 import org.cufir.s.ecore.bean.EcoreConstraint;
@@ -30,10 +32,8 @@ import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
 import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-import org.cufir.s.data.vo.EcoreCodeVO;
-import org.cufir.s.data.vo.EcoreDataTypeVO;
-import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.ide.NumberUtil;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.swt.SWT;
@@ -70,8 +70,6 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * DataType （数据类型）编辑和显示
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 
 public class DataTypesEditor extends MrMultiPageEditor {
@@ -128,7 +126,7 @@ public class DataTypesEditor extends MrMultiPageEditor {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		this.setSite(site);
 		this.setInput(input);
-		this.setPartProperty("customName", "dataTypesCreate");
+		this.setPartProperty(MrHelper.SAVE_CUSTOM_NAME, TreeMenuEnum.DATA_TYPES.getName());
 		this.myEditorInput = (MrEditorInput) input;
 
 		modelExploreTreeItem = this.myEditorInput.getTransferDataBean().getTreeListItem();
@@ -1058,7 +1056,7 @@ public class DataTypesEditor extends MrMultiPageEditor {
 		Group messageSetsGroup = new Group(groupListComposite, SWT.NONE);
 		messageSetsGroup.setText(I18nApi.get("editor.title.ms"));
 		messageSetsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageSetsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageSetsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageSetsGroup.setLayoutData(groupGridData);
 		messageSetsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageSetTable = new Table(messageSetsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -1071,7 +1069,7 @@ public class DataTypesEditor extends MrMultiPageEditor {
 		Group messageDefinitionsGroup = new Group(groupListComposite, SWT.NONE);
 		messageDefinitionsGroup.setText(I18nApi.get("editor.title.md"));
 		messageDefinitionsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageDefinitionsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageDefinitionsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageDefinitionsGroup.setLayoutData(groupGridData);
 		messageDefinitionsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageDefinitionTable = new Table(messageDefinitionsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -1084,7 +1082,7 @@ public class DataTypesEditor extends MrMultiPageEditor {
 		Group messageComponentGroup = new Group(groupListComposite, SWT.NONE);
 		messageComponentGroup.setText(I18nApi.get("editor.title.mc"));
 		messageComponentGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageComponentGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageComponentGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageComponentGroup.setLayoutData(groupGridData);
 		messageComponentGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageComponentTable = new Table(messageComponentGroup, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);

@@ -5,9 +5,7 @@ import org.eclipse.swt.graphics.Image;
 import lombok.Data;
 
 /**
- * 按钮原则
- * @author tangmaoquan
- * @Date 2022年2月8日
+ * 按钮
  */
 @Data
 public class ButtonPolicy {

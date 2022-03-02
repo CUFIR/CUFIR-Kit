@@ -2,18 +2,15 @@ package org.cufir.plugin.mr.bean;
 
 import java.util.List;
 
-import org.cufir.plugin.mr.utils.ImgUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
-
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.s.data.vo.EcoreTreeNode;
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 
 /**
  * 树菜单节点展示
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrTreeItem extends TreeItem{
 	

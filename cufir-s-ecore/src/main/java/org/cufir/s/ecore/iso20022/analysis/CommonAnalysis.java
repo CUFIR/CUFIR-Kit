@@ -5,8 +5,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析Common
- * @author zqh
- *
  */
 public class CommonAnalysis {
 	

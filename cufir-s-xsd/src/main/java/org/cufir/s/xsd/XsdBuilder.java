@@ -17,13 +17,13 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.cufir.s.ide.db.DerbyUtil;
 import org.cufir.s.xsd.bean.AttributeBean;
 import org.cufir.s.xsd.bean.ComplexBean;
 import org.cufir.s.xsd.bean.ElementBean;
 import org.cufir.s.xsd.bean.SimpleBean;
 import org.cufir.s.xsd.bean.TreeBean;
 import org.cufir.s.xsd.bean.XsdModel;
-import org.cufir.s.xsd.util.DerbyUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -33,8 +33,6 @@ import org.jdom.input.SAXBuilder;
  * 1.按消息id查询数据库得到xsd的各个子元素列表
  * 2.将xsd各个子元素组装成xsd文件，并存到文件中
  * 3.将xsd文件解析成TreeBean的结构
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 @SuppressWarnings("rawtypes")
 public class XsdBuilder {
@@ -229,7 +227,7 @@ public class XsdBuilder {
 				eb.setMaxOccurs(rs5.getString("MAX_OCCURS"));
 				eb.setMinOccurs(rs5.getString("MIN_OCCURS"));
 				ls.add(eb);
-				ob.setList(ls);
+				ob.setConmmonlyElements(ls);
 				component.getComplexnodes().add(ob);
 				// 遍历集合，将下一层循环数据加入集合
 				for (ElementBean elementNode : component.getComplexnodes()) {
@@ -241,7 +239,7 @@ public class XsdBuilder {
 						ee.setMaxOccurs(rs5.getString("MAX_OCCURS"));
 						ee.setMinOccurs(rs5.getString("MIN_OCCURS"));
 						le.add(ee);
-						elementNode.getList().addAll(le);
+						elementNode.getConmmonlyElements().addAll(le);
 					}
 				}
 				if ("1".equals(rs5.getString("DATA_TYPE"))) {
@@ -255,7 +253,7 @@ public class XsdBuilder {
 							List<ElementBean> list_1 = queryToSimple(typeId, component);
 							System.out.println("简单类型列表" + list_1 + "====================");
 							cb.setName(rs5.getString("NAME"));
-							cb.setCodes(list_1);
+							cb.setCodeElements(list_1);
 							component.getSimplenodes().add(cb);
 						} else {
 							// 如果不是1，去dataTypemap中取数据，取数据
@@ -274,7 +272,7 @@ public class XsdBuilder {
 							ln.setMaxExclusive(elementNode.getMaxExclusive());
 							ln.setMinExclusive(elementNode.getMinExclusive());
 							lll.add(ln);
-							en.setCodes(lll);
+							en.setCodeElements(lll);
 							component.getSimplenodes().add(en);
 						}
 					}
@@ -285,7 +283,7 @@ public class XsdBuilder {
 					@SuppressWarnings("unchecked")
 					List<ElementBean> list = queryToElement(dataTypeId, component);
 					cnode.setName(rs5.getString("NAME"));
-					cnode.setList(list);
+					cnode.setConmmonlyElements(list);
 					component.getComplexnodes().add(cnode);
 				}
 			}
@@ -300,7 +298,7 @@ public class XsdBuilder {
 				eb.setMaxOccurs(rs6.getString("MAX_OCCURS"));
 				eb.setMinOccurs(rs6.getString("MIN_OCCURS"));
 				ls.add(eb);
-				ob.setList(ls);
+				ob.setConmmonlyElements(ls);
 				component.getDatas().add(ob);
 			}
 			connection.commit();
@@ -341,7 +339,7 @@ public class XsdBuilder {
 				String cc = complexBean.getTypeId();
 				List<ElementBean> ls = queryToElement(cc, component);
 				nn.setName(complexBean.getType());
-				nn.setList(ls);
+				nn.setConmmonlyElements(ls);
 				component.getComplexnodes().add(nn);
 			} else if ("1".equals(complexBean.getDataType())) {
 				// type为1,去datatypemap中取数据
@@ -353,7 +351,7 @@ public class XsdBuilder {
 					if ("1".equals(complexBean2.getType())) {
 						List<ElementBean> ll = queryToSimple(typeId, component);
 						cn.setName(names);
-						cn.setCodes(ll);
+						cn.setCodeElements(ll);
 						component.getSimplenodes().add(cn);
 					} else {
 						// 如果不是1，去dataTypemap中取数据，取数据
@@ -372,7 +370,7 @@ public class XsdBuilder {
 						ln.setMaxExclusive(complexBean2.getMaxExclusive());
 						ln.setMinExclusive(complexBean2.getMinExclusive());
 						lll.add(ln);
-						en.setCodes(lll);
+						en.setCodeElements(lll);
 						component.getSimplenodes().add(en);
 					}
 				}
@@ -394,24 +392,24 @@ public class XsdBuilder {
 		generate.addDocumentComplexType();
 		int i = 0;
 		for (ElementBean node : component.getComplexnodes()) {
-			List<ElementBean> ls = node.getList();
+			List<ElementBean> ls = node.getConmmonlyElements();
 			if (ls == null) {
 				logger.warn("ls没有数据");
 			}
 			if(i == 0) {
-				generate.addTopType(node.getName(), node.getList(), component.getDatas());
+				generate.addTopType(node.getName(), node.getConmmonlyElements(), component.getDatas());
 				i++;
 			}else {
-				generate.addComplexType(node.getName(), node.getList());
+				generate.addComplexType(node.getName(), node.getConmmonlyElements());
 			}
 		}
 		for (ElementBean node : component.getSimplenodes()) {
-			List list11 = node.getCodes();
+			List list11 = node.getCodeElements();
 			if (list11 == null) {
 				logger.warn("list11没有数据");
 			}
 			if (list11 != null) {
-				generate.addSimpleType(node.getName(), node.getCodes());
+				generate.addSimpleType(node.getName(), node.getCodeElements());
 			}
 		}
 		generate.writeToDisk(path);

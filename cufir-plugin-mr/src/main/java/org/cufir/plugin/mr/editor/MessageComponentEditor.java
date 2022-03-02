@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ComboPolicy;
@@ -19,10 +20,12 @@ import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
 import org.cufir.plugin.mr.bean.TransferDataBean;
+import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.NumberUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.s.data.vo.EcoreMessageComponentVO;
+import org.cufir.s.data.vo.EcoreMessageElementVO;
+import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.data.vo.SynonymVO;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
 import org.cufir.s.ecore.bean.EcoreCode;
@@ -36,11 +39,8 @@ import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageElement;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-import org.cufir.s.data.vo.EcoreMessageComponentVO;
-import org.cufir.s.data.vo.EcoreMessageElementVO;
-import org.cufir.s.data.vo.EcoreTreeNode;
-import org.cufir.s.data.vo.SynonymVO;
+import org.cufir.s.ide.NumberUtil;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -89,8 +89,6 @@ import org.springframework.util.StringUtils;
 
 /**
  * MessageComponents（元素组）新建、编辑
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MessageComponentEditor extends MrMultiPageEditor {
 
@@ -174,7 +172,7 @@ public class MessageComponentEditor extends MrMultiPageEditor {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		this.setSite(site);
 		this.setInput(input);
-		this.setPartProperty("customName", "msgComponentCreate");
+		this.setPartProperty(MrHelper.SAVE_CUSTOM_NAME, TreeMenuEnum.MESSAGE_COMPONENTS.getName());
 		this.myEditorInput = (MrEditorInput) input;
 		this.dataType = this.myEditorInput.getTransferDataBean().getType();
 		modelExploreTreeItem = this.myEditorInput.getTransferDataBean().getTreeListItem();
@@ -905,7 +903,7 @@ public class MessageComponentEditor extends MrMultiPageEditor {
 		Label BusinessTraces = new Label(composite, SWT.NONE);
 		BusinessTraces.setText(I18nApi.get("editor.title.bt"));
 		BusinessTraces.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		BusinessTraces.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		BusinessTraces.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		Label descriptionLabel = new Label(composite, SWT.NONE);
 		descriptionLabel.setText("This section describes the Business traces of the message elements to the business model.");
 		bt = new SummaryRowTextComposite(composite, new ButtonPolicy(ButtonPolicy.BUTTON_TYPE_NONE_DEEP,"Change Trace")).getButton();
@@ -1319,7 +1317,7 @@ public class MessageComponentEditor extends MrMultiPageEditor {
 		Group messageSetsGroup = new Group(groupListComposite, SWT.NONE);
 		messageSetsGroup.setText(I18nApi.get("editor.title.ms"));
 		messageSetsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageSetsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageSetsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageSetsGroup.setLayoutData(groupGridData);
 		messageSetsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageSetTable = new Table(messageSetsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -1336,7 +1334,7 @@ public class MessageComponentEditor extends MrMultiPageEditor {
 		Group messageDefinitionsGroup = new Group(groupListComposite, SWT.NONE);
 		messageDefinitionsGroup.setText(I18nApi.get("editor.title.md"));
 		messageDefinitionsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageDefinitionsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageDefinitionsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageDefinitionsGroup.setLayoutData(groupGridData);
 		messageDefinitionsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageDefinitionTable = new Table(messageDefinitionsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -1348,7 +1346,7 @@ public class MessageComponentEditor extends MrMultiPageEditor {
 		Group messageComponentGroup = new Group(groupListComposite, SWT.NONE);
 		messageComponentGroup.setText(I18nApi.get("editor.title.mc"));
 		messageComponentGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageComponentGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageComponentGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageComponentGroup.setLayoutData(groupGridData);
 		messageComponentGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageComponentTable = new Table(messageComponentGroup, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);

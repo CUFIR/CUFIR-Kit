@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析SemanticMarkupElement
- * @author zqh
- *
  */
 public class SemanticMarkupElementAnalysis {
 

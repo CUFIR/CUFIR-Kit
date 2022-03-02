@@ -8,8 +8,6 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * 解析Example
- * @author zqh
- *
  */
 public class ExampleAnalysis {
 

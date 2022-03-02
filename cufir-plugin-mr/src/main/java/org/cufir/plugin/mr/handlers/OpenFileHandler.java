@@ -1,25 +1,19 @@
 package org.cufir.plugin.mr.handlers;
 
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.plugin.mr.MrHelper;
+import org.cufir.s.data.Iso20022Mgr;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import org.cufir.s.data.Iso20022Mgr;
-import org.cufir.s.ide.utils.MarkerUtil;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-
 /**
  * 打开文件
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class OpenFileHandler extends AbstractHandler {
 
@@ -41,8 +35,7 @@ public class OpenFileHandler extends AbstractHandler {
 				openFile();
 			}
 		} catch (Exception e) {
-			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot(); // 创建具有全局性作用的标记                
-			MarkerUtil.addMarkerError(root,e.getMessage(), "OpenFileHandler");
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -53,7 +46,7 @@ public class OpenFileHandler extends AbstractHandler {
 	public void openFile() {
 		Display display = Display.getCurrent();
 		Shell shell = new Shell(display.getActiveShell());
-		SystemUtil.center(shell);
+		MrHelper.center(shell);
 		shell.setSize(400, 100);
 
 		FileDialog fileDialog = new FileDialog(shell, SWT.OPEN);
@@ -69,8 +62,8 @@ public class OpenFileHandler extends AbstractHandler {
 				shell.dispose();
 			}
 			// 解析数据
-			OpenFileProcess ifp = new OpenFileProcess(filePath, fileName);
-			ifp.process();
+			OpenFileProgress ifp = new OpenFileProgress(filePath, fileName);
+			ifp.progress();
 		}
 	}
 }

@@ -14,20 +14,17 @@ import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.TreeItem;
 import org.springframework.util.StringUtils;
 
 /**
  * 编辑帮助
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorHelper {
 

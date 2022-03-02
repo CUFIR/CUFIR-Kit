@@ -14,9 +14,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry exported="true" kind="lib" path="lib/cufir-s-ide-1.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/cufir-s-data-1.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/cufir-s-ecore-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/cufir-s-ide-1.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/cufir-s-xsd-1.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-beanutils-1.9.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.12.jar"/>

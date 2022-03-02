@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析BusinessRole
- * @author zqh
- *
  */
 public class BusinessRoleAnalysis {
 

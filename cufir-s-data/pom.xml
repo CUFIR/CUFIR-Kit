@@ -10,6 +10,14 @@
 	<description>ISO20022文件解析入库，数据提供构件</description>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.cufir</groupId>
+			<artifactId>cufir-s-ide</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 		    <groupId>org.eclipse.platform</groupId>
 		    <artifactId>org.eclipse.core.runtime</artifactId>
@@ -49,7 +57,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
+<!-- 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -87,14 +95,14 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
-		<dependency>
+ -->
+		<!-- <dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.9.3</version>
 			<type>jar</type>
 			<scope>compile</scope>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>commons-collections</groupId>

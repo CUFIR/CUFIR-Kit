@@ -8,13 +8,11 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 
 /**
  * EcoreSemanticMarkup数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreSemanticMarkupImpl{
 

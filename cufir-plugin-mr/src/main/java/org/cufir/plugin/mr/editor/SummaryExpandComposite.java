@@ -1,6 +1,5 @@
 package org.cufir.plugin.mr.editor;
 
-import org.cufir.plugin.mr.utils.SystemUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
@@ -10,9 +9,7 @@ import org.eclipse.swt.widgets.ExpandBar;
 import org.eclipse.swt.widgets.ExpandItem;
 
 /**
- * 扩展封装
- * @author tangmaoquan
- * @Date 2021年10月18日
+ * 扩展组件
  */
 public class SummaryExpandComposite {
 
@@ -34,7 +31,7 @@ public class SummaryExpandComposite {
 			expandBar = new ExpandBar(com, SWT.NONE);
 		}
 		expandBar.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		expandBar.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		expandBar.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 	}
 	
 	/**

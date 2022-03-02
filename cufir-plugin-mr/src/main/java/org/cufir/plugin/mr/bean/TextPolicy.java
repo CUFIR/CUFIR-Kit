@@ -7,8 +7,6 @@ import lombok.Data;
 
 /**
  * 文本原则
- * @author tangmaoquan
- * @Date 2022年1月25日
  */
 @Data
 public class TextPolicy {

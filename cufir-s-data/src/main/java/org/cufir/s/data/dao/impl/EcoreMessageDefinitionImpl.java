@@ -1,5 +1,9 @@
 package org.cufir.s.data.dao.impl;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -17,18 +21,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
-import org.cufir.s.ecore.bean.EcoreBusinessArea;
-import org.cufir.s.ecore.bean.EcoreConstraint;
-import org.cufir.s.ecore.bean.EcoreExample;
-import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
-import org.cufir.s.ecore.bean.EcoreMessageComponent;
-import org.cufir.s.ecore.bean.EcoreMessageDefinition;
-import org.cufir.s.ecore.bean.EcoreNextVersions;
-import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
-import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
-import org.cufir.s.data.util.ListUtil;
 import org.cufir.s.data.vo.EcoreDocumentTreeNode;
 import org.cufir.s.data.vo.EcoreMessageBuildingBlockVO;
 import org.cufir.s.data.vo.EcoreMessageDefinitionVO;
@@ -50,11 +42,20 @@ import org.cufir.s.data.vo.web.EcoreNextVersionsVo;
 import org.cufir.s.data.vo.web.EcoreSemanticMarkupElementVo;
 import org.cufir.s.data.vo.web.EcoreSemanticMarkupVo;
 import org.cufir.s.data.vo.web.RemovedObjectVo;
+import org.cufir.s.ecore.bean.EcoreBusinessArea;
+import org.cufir.s.ecore.bean.EcoreConstraint;
+import org.cufir.s.ecore.bean.EcoreExample;
+import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
+import org.cufir.s.ecore.bean.EcoreMessageComponent;
+import org.cufir.s.ecore.bean.EcoreMessageDefinition;
+import org.cufir.s.ecore.bean.EcoreNextVersions;
+import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
+import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 
 /**
  * EcoreMessageDefinition数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreMessageDefinitionImpl{
 
@@ -242,7 +243,7 @@ public class EcoreMessageDefinitionImpl{
 			definitionTreeNode.setName("Message Definitions");
 			definitionTreeNode.setLevel("1");
 			definitionTreeNode.setType("7");
-			List<EcoreTreeNode> copyMessageDefinitions= ListUtil.deepCopy(messageDefinitions);
+			List<EcoreTreeNode> copyMessageDefinitions= deepCopy(messageDefinitions);
 			for(EcoreTreeNode n:copyMessageDefinitions) {
 				n.setLevel("2");
 				if(n.getChildNodes()!=null && !n.getChildNodes().isEmpty()) {
@@ -1937,5 +1938,21 @@ public class EcoreMessageDefinitionImpl{
 				}
 			}
 		}
+	}
+	
+	public static<T> List<T> deepCopy(List<T> srcList){
+		try {
+			ByteArrayOutputStream byteOut=new ByteArrayOutputStream();
+			ObjectOutputStream out =new ObjectOutputStream(byteOut);
+			out.writeObject(srcList);
+			out.close();
+			
+			ByteArrayInputStream byteIn=new ByteArrayInputStream(byteOut.toByteArray());
+			ObjectInputStream in=new ObjectInputStream(byteIn);
+			return (List<T>)in.readObject();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

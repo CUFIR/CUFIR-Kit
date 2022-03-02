@@ -12,8 +12,6 @@ import org.eclipse.ui.internal.part.NullEditorInput;
 
 /**
  * editor工具类
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 @SuppressWarnings("restriction")
 public class EditorUtil {

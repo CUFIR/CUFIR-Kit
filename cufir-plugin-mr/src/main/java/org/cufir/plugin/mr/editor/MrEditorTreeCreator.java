@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
-import org.cufir.plugin.mr.utils.ImgUtil;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
 import org.cufir.s.ecore.bean.EcoreCode;
 import org.cufir.s.ecore.bean.EcoreConstraint;
@@ -26,8 +26,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * 生成树
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorTreeCreator {
 

@@ -6,8 +6,6 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 
 /**
  * 编辑抽象类
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public abstract class MrMultiPageEditor extends MultiPageEditorPart{
 	
@@ -38,11 +36,5 @@ public abstract class MrMultiPageEditor extends MultiPageEditorPart{
 	public void setContext(IEditorSite site) {
 		IContextService contextService = site.getService(IContextService.class);
 		contextService.activateContext(contextId);
-	}
-	
-	@Override
-	public Object getAdapter(Class adapter) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

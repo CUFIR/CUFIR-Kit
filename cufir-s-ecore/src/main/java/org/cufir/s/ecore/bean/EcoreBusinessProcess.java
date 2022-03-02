@@ -6,8 +6,6 @@ import lombok.Data;
 
 /**
  * 进程
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 public class EcoreBusinessProcess {

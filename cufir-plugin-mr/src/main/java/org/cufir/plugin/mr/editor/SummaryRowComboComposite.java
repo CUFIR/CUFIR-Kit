@@ -1,22 +1,15 @@
 package org.cufir.plugin.mr.editor;
 
 import org.cufir.plugin.mr.bean.ComboPolicy;
-import org.cufir.plugin.mr.bean.TextPolicy;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
 import org.springframework.util.StringUtils;
 
 /**
- * 选择封装
- * @author tangmaoquan
- * @Date 2021年10月19日
+ * 选择组件
  */
 public class SummaryRowComboComposite {
 

@@ -7,4 +7,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: cufir-s-ide
-Export-Package: org.cufir.s.ide.utils.i18n
+Export-Package: org.cufir.s.ide,
+ org.cufir.s.ide.db,
+ org.cufir.s.ide.i18n

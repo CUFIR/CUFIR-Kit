@@ -1,5 +1,6 @@
 package org.cufir.plugin.mr;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,22 +14,37 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.cufir.plugin.mr.editor.MrImplManager;
-import org.cufir.s.data.Constant;
 import org.cufir.s.data.vo.EcoreTreeNode;
-import org.cufir.s.ecore.bean.*;
+import org.cufir.s.ecore.bean.EcoreBusinessArea;
+import org.cufir.s.ecore.bean.EcoreBusinessComponent;
+import org.cufir.s.ecore.bean.EcoreBusinessElement;
+import org.cufir.s.ecore.bean.EcoreCode;
+import org.cufir.s.ecore.bean.EcoreConstraint;
+import org.cufir.s.ecore.bean.EcoreDataType;
+import org.cufir.s.ecore.bean.EcoreExample;
+import org.cufir.s.ecore.bean.EcoreExternalSchema;
+import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
+import org.cufir.s.ecore.bean.EcoreMessageComponent;
+import org.cufir.s.ecore.bean.EcoreMessageDefinition;
+import org.cufir.s.ecore.bean.EcoreMessageElement;
+import org.cufir.s.ecore.bean.EcoreNextVersions;
+import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
+import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
+import org.cufir.s.ide.db.DbUtil;
+import org.eclipse.swt.widgets.Shell;
 
 /**
- * 直接操作数据库
- * @author tangmaoquan
- * @Date 2021年9月29日
- *
+ * 操作数据
  */
 public class MrHelper {
+	
+	// 模块相关
+	public static final String SAVE_CUSTOM_NAME = "customName";
 	
 	static String url ="";
 	
 	static {
-		url = "jdbc:derby:" + Constant.CONFIG_PATH + "\\db;create=false";
+		url = "jdbc:derby:" + DbUtil.CONFIG_PATH + "\\db;create=false";
 	}	
 
 	/**
@@ -276,7 +292,6 @@ public class MrHelper {
 				throw new RuntimeException(e2);
 			}
 		}
-		
 	}
 	
 	
@@ -1136,5 +1151,32 @@ public static Map<String,ArrayList<EcoreBusinessElement>> getAllBeByComponentId(
 				throw new RuntimeException(e2);
 			}
 		}
+	}
+	
+	
+	/**
+	 * 设置窗口位于屏幕中间
+	 * @param shell 要调整位置的窗口对象
+	 */
+	public static void center(Shell shell) {
+		//获取屏幕宽度
+		int screenH=Toolkit.getDefaultToolkit().getScreenSize().height;
+		int screenW=Toolkit.getDefaultToolkit().getScreenSize().width;
+		//获取对象窗口高度和宽度
+		int shellH=shell.getBounds().height;
+		int shellW=shell.getBounds().width;
+		
+		//如果对象窗口高度超出屏幕高度，则强制其与屏幕等高
+		if (shellH>screenH) {
+			shellH=screenH;
+		}
+		
+		//如果对象窗口宽度抽出屏幕宽度，则强制其与屏幕等宽
+		if (shellW>screenW) {
+			shellW=screenW;
+		}
+		
+		//定位对象窗口坐标
+		shell.setLocation((int) (screenW*0.37),(int) (screenH*0.26));
 	}
 }

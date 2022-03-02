@@ -4,19 +4,18 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.NumberUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
 import org.cufir.s.ecore.bean.EcoreConstraint;
 import org.cufir.s.ecore.bean.EcoreDataType;
 import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
 import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
+import org.cufir.s.ide.NumberUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -28,7 +27,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
@@ -40,8 +38,6 @@ import org.springframework.util.StringUtils;
 
 /**
  * 报文内容子窗口选择组件用
- * @author tangmaoquan
- * @Date 2021年10月26日
  */
 public class MessageDefinitionEditorChooser {
 	
@@ -51,7 +47,7 @@ public class MessageDefinitionEditorChooser {
 		shell.setLayout(new FormLayout());
 
 		// 改变弹窗位置
-		SystemUtil.center(shell);
+		MrHelper.center(shell);
 
 		Composite c = new Composite(shell, SWT.NONE);
 		Text nameText = new SummaryRowTextComposite(c, new TextPolicy(TextPolicy.TEXT_CONTENT_COMMONLY_TYPE, 10, "Name")).getText();
@@ -161,7 +157,7 @@ public class MessageDefinitionEditorChooser {
 		shell.setText("Select Message Element type:");
 		shell.setLayout(new FormLayout());
 		// 改变弹窗位置
-		SystemUtil.center(shell);
+		MrHelper.center(shell);
 		Composite c = new Composite(shell, SWT.NONE);
 		Text searchText = new Text(c, SWT.BORDER);
 		searchText.setBounds(10, 10, 350, 30);
@@ -250,7 +246,7 @@ public class MessageDefinitionEditorChooser {
 		shell.setText("Constraint General Information");
 		shell.setLayout(new FormLayout());
 		// 改变弹窗位置
-		SystemUtil.center(shell);
+		MrHelper.center(shell);
 		Composite c = new Composite(shell, SWT.NONE);
 		
 		Text nameText = new SummaryRowTextComposite(c, new TextPolicy(TextPolicy.TEXT_CONTENT_COMMONLY_TYPE, 5, "Name")).getText();

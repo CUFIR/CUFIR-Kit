@@ -12,8 +12,6 @@ import org.eclipse.osgi.service.datalocation.Location;
 
 /**
  * 配置文件处理
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
 public final class Configuration {
 

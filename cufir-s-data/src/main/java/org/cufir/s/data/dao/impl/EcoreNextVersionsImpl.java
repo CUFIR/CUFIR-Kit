@@ -9,12 +9,10 @@ import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
-import org.cufir.s.data.util.DbUtil;
+import org.cufir.s.ide.db.DbUtil;
 
 /**
  * EcoreNextVersions数据库操作
- * @author tangmaoquan
- * @Date 2021年11月11日
  */
 public class EcoreNextVersionsImpl{
 

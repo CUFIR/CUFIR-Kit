@@ -5,9 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 /**
- * 下拉原则
- * @author tangmaoquan
- * @Date 2022年2月8日
+ * 下拉
  */
 @Data
 public class ComboPolicy {

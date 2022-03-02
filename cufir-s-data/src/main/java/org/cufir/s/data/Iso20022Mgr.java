@@ -69,15 +69,13 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析ISO20022库入口
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class Iso20022Mgr implements Runnable {
 	
 	/**
 	 * 
 	 */
-	private IAnalysisProcessMonitor monitor;
+	private IAnalysisProgressMonitor monitor;
 	private String filePath;
 
 	/**
@@ -86,7 +84,7 @@ public class Iso20022Mgr implements Runnable {
 	 * @param filePath
 	 * @param monitor
 	 */
-	public Iso20022Mgr(String filePath, IAnalysisProcessMonitor monitor) {
+	public Iso20022Mgr(String filePath, IAnalysisProgressMonitor monitor) {
 		this.filePath = filePath;
 		this.monitor = monitor;
 	}

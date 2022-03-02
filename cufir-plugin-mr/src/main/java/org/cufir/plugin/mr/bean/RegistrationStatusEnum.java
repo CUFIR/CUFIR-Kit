@@ -2,8 +2,6 @@ package org.cufir.plugin.mr.bean;
 
 /**
  * 登记状态枚举
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public enum RegistrationStatusEnum {
 

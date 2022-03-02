@@ -2,12 +2,13 @@ package org.cufir.s.ecore.bean;
 
 import java.util.Date;
 
+import org.cufir.s.ide.db.Table;
+import org.cufir.s.ide.db.TableColumn;
+
 import lombok.Data;
 
 /**
  * 混合类型元素（组件关联组件或元素）
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 @Table(name = "ECORE_MESSAGE_ELEMENT", note = "混合类型元素")

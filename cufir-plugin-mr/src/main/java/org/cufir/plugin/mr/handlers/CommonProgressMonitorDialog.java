@@ -1,16 +1,14 @@
 package org.cufir.plugin.mr.handlers;
 
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.NumberUtil;
+import org.cufir.plugin.mr.ImgUtil;
+import org.cufir.s.ide.NumberUtil;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Shell;
 
 /**
- * 自定义 ProgressMonitorDialog 
- * @author TangTao、tangmaoquan
- * @Date 2021年10月15日
+ * 自定义 ProgressMonitorDialog
  */
 public class CommonProgressMonitorDialog  extends ProgressMonitorDialog{
 	
@@ -21,10 +19,6 @@ public class CommonProgressMonitorDialog  extends ProgressMonitorDialog{
 	
 	private String image;
 
-//	public CufirProgressMonitorDialog() {
-//		super(null);
-//	}
-//	
 	public CommonProgressMonitorDialog(String title) {
 		super(null);
 		this.title=title;

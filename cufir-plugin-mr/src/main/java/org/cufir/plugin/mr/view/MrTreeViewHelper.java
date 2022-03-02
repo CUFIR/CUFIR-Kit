@@ -2,6 +2,7 @@ package org.cufir.plugin.mr.view;
 
 import java.util.UUID;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.DataTypesEnum;
 import org.cufir.plugin.mr.bean.MrTreeItem;
@@ -13,15 +14,13 @@ import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.editor.EditorUtil;
 import org.cufir.plugin.mr.editor.MrEditorDialogCreator;
 import org.cufir.plugin.mr.editor.MrImplManager;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
 import org.cufir.s.data.MDR3Mgr;
 import org.cufir.s.data.MessageDataMgr;
-import org.cufir.s.ecore.bean.EcoreBusinessArea;
-import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.data.vo.EcoreCodeVO;
 import org.cufir.s.data.vo.EcoreDataTypeVO;
 import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.ecore.bean.EcoreBusinessArea;
+import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.xsd.XsdBuilder;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
@@ -44,8 +43,6 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * 树视图帮助类
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrTreeViewHelper {
 	
@@ -1123,7 +1120,6 @@ public class MrTreeViewHelper {
 							treeItem.dispose();
 						} catch (Exception e1) {
 							e1.printStackTrace();
-							SystemUtil.handle(e1);
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1135,7 +1131,6 @@ public class MrTreeViewHelper {
 							treeItem.dispose();
 						} catch (Exception e1) {
 							e1.printStackTrace();
-							SystemUtil.handle(e1);
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1227,7 +1222,6 @@ public class MrTreeViewHelper {
 							treeItem.dispose();
 						} catch (Exception e1) {
 							e1.printStackTrace();
-							SystemUtil.handle(e1);
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1239,7 +1233,6 @@ public class MrTreeViewHelper {
 							treeItem.dispose();
 						} catch (Exception e1) {
 							e1.printStackTrace();
-							SystemUtil.handle(e1);
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1325,7 +1318,7 @@ public class MrTreeViewHelper {
 								treeItem.dispose();
 							}
 						} catch (Exception e1) {
-							SystemUtil.handle(e1);
+							e1.printStackTrace();
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1336,7 +1329,7 @@ public class MrTreeViewHelper {
 								treeItem.dispose();
 							}
 						} catch (Exception e1) {
-							SystemUtil.handle(e1);
+							e1.printStackTrace();
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}
@@ -1385,7 +1378,7 @@ public class MrTreeViewHelper {
 								}
 							}
 						} catch (Exception e1) {
-							SystemUtil.handle(e1);
+							e1.printStackTrace();
 							//删除失败
 							MrEditorDialogCreator.deleteFail();
 						}

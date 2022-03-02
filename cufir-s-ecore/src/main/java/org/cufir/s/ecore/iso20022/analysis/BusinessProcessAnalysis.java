@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析BusinessProcess
- * @author zqh
- *
  */
 public class BusinessProcessAnalysis {
 

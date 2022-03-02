@@ -8,8 +8,6 @@ import org.cufir.s.ecore.bean.EcoreConstraint;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -23,8 +21,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * 报文内容子窗口对话框
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MessageDefinitionEditorDialogContent {
 
@@ -38,11 +34,6 @@ public class MessageDefinitionEditorDialogContent {
 		synonymsWindow.setText("Enter values for Synonym");
 		synonymsWindow.setLayout(new FormLayout());
 		Composite c = new Composite(synonymsWindow, SWT.NONE);
-		FormData fd_c = new FormData();
-		fd_c.top = new FormAttachment(0);
-		fd_c.left = new FormAttachment(0);
-		fd_c.bottom = new FormAttachment(100);
-		fd_c.right = new FormAttachment(100);
 
 		Label contextLabel = new Label(c, SWT.NONE);
 		contextLabel.setText("Context");
@@ -96,11 +87,6 @@ public class MessageDefinitionEditorDialogContent {
 		constraintWindow.setText("Constraint General Information");
 		constraintWindow.setLayout(new FormLayout());
 		Composite c = new Composite(constraintWindow, SWT.NONE);
-		FormData fd_c = new FormData();
-		fd_c.top = new FormAttachment(0);
-		fd_c.left = new FormAttachment(0);
-		fd_c.bottom = new FormAttachment(100);
-		fd_c.right = new FormAttachment(100);
 
 		Label nameLabel = new Label(c, SWT.NONE);
 		nameLabel.setText("Name");

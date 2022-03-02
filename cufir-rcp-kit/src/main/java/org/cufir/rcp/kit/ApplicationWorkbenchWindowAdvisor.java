@@ -2,22 +2,12 @@ package org.cufir.rcp.kit;
 
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.MenuManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
-import org.eclipse.ui.internal.WorkbenchWindow;
 
-/**
- * ApplicationWorkbenchWindowAdvisor
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
- */
 public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 
 	public ApplicationWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
@@ -33,15 +23,12 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	@Override
 	public void preWindowOpen() {
 		IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
-//		ApplicationConfigurer configurer = (ApplicationConfigurer) getWindowConfigurer();
-//		configurer.setInitialSize(new Point(1000, 800));
 		configurer.setShellStyle(SWT.FULL_SELECTION);
 		configurer.setShowCoolBar(false);
 		configurer.setShowStatusLine(true);
 		configurer.setTitle(Activator.CUFIR_NAME);
 		configurer.setShowMenuBar(false);
 		configurer.setShowProgressIndicator(true);
-//		configurer.setPresentationFactory(new UnCloseableEditorPresentationFactory());
 	}
 	
 	/**

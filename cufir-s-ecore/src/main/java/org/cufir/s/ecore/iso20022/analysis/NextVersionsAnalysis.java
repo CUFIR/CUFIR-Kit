@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析NextVersions
- * @author zqh
- *
  */
 public class NextVersionsAnalysis {
 

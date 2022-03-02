@@ -9,8 +9,6 @@ import lombok.Data;
 
 /**
  * Xsd文件-》XsdModel，封裝Xsd文件内各个元素封装列表
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 @Data
 public class XsdModel {

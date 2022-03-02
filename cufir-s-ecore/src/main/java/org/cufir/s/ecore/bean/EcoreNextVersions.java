@@ -2,12 +2,13 @@ package org.cufir.s.ecore.bean;
 
 import java.util.Date;
 
+import org.cufir.s.ide.db.Table;
+import org.cufir.s.ide.db.TableColumn;
+
 import lombok.Data;
 
 /**
  * 版本关联
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 @Table(name = "ECORE_NEXT_VERSIONS", note = "版本关联")

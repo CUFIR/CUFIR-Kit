@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析BusinessComponent
- * @author zqh
- *
  */
 public class BusinessComponentAnalysis {
 

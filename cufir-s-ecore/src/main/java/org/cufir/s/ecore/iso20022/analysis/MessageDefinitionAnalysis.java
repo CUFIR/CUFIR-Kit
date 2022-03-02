@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析MessageDefinition
- * @author zqh
- *
  */
 public class MessageDefinitionAnalysis {
 

@@ -2,12 +2,13 @@ package org.cufir.s.ecore.bean;
 
 import java.util.Date;
 
+import org.cufir.s.ide.db.Table;
+import org.cufir.s.ide.db.TableColumn;
+
 import lombok.Data;
 
 /**
  * 报文集和报文关系映射表
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 @Table(name = "ECORE_MESSAGE_SET_DEFINITION_RL", note = "报文集和报文关系映射表")

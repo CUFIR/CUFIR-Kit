@@ -19,8 +19,6 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * 登陆界面
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
 public class LoginDialog extends Dialog {
 

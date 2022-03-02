@@ -27,8 +27,8 @@ import org.cufir.s.ecore.bean.EcoreMessageElement;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 import org.cufir.s.data.vo.EcoreMessageComponentVO;
 import org.cufir.s.data.vo.EcoreMessageElementVO;
 import org.cufir.s.data.vo.EcoreTreeNode;
@@ -37,8 +37,6 @@ import org.cufir.s.data.vo.SynonymVO;
 
 /**
  * EcoreMessageComponent数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreMessageComponentImpl{
 

@@ -1,6 +1,7 @@
 package org.cufir.rcp.kit;
 
 import org.cufir.rcp.kit.dialogs.SplashDialog;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
@@ -10,12 +11,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
-import org.cufir.s.ide.utils.i18n.I18nApi;
-
 /**
  * This class controls all aspects of the application's execution
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
 public class Application implements IApplication {
 

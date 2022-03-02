@@ -1,9 +1,9 @@
 package org.cufir.plugin.mr.editor;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.bean.MrTreeItem;
 import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.TransferDataBean;
-import org.cufir.plugin.mr.utils.ImgUtil;
 import org.cufir.s.data.vo.EcoreTreeNode;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.events.MouseAdapter;
@@ -13,8 +13,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * 树内容搜索点击事件
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrSearchMouseAdapter extends MouseAdapter {
 

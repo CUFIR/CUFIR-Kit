@@ -31,6 +31,6 @@ Bundle-ClassPath: .,
 Export-Package: org.cufir.rcp.kit,
  org.cufir.rcp.kit.dialogs,
  org.cufir.rcp.kit.handlers,
- org.cufir.rcp.kit.views,
- org.cufir.s.ide.utils,
- org.cufir.s.ide.utils.i18n
+ org.cufir.s.ide,
+ org.cufir.s.ide.db,
+ org.cufir.s.ide.i18n

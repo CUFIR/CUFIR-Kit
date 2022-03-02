@@ -2,12 +2,13 @@ package org.cufir.s.ecore.bean;
 
 import java.util.Date;
 
+import org.cufir.s.ide.db.Table;
+import org.cufir.s.ide.db.TableColumn;
+
 import lombok.Data;
 
 /**
  * 组件
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 @Table(name = "ECORE_MESSAGE_COMPONENT", note = "组件")

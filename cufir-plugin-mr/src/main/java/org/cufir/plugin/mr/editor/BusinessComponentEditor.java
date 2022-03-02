@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ComboPolicy;
@@ -18,9 +19,12 @@ import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
 import org.cufir.plugin.mr.bean.TransferDataBean;
 import org.cufir.plugin.mr.bean.TreeLevelEnum;
+import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.s.data.vo.EcoreBusinessComponentVO;
+import org.cufir.s.data.vo.EcoreBusinessElementVO;
+import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.data.vo.SynonymVO;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreBusinessComponentRL;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
@@ -32,11 +36,7 @@ import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-import org.cufir.s.data.vo.EcoreBusinessComponentVO;
-import org.cufir.s.data.vo.EcoreBusinessElementVO;
-import org.cufir.s.data.vo.EcoreTreeNode;
-import org.cufir.s.data.vo.SynonymVO;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.swt.SWT;
@@ -49,7 +49,6 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.FillLayout;
@@ -79,8 +78,6 @@ import org.springframework.util.StringUtils;
 
 /**
  * Business Component （业务组）编辑和显示
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class BusinessComponentEditor extends MrMultiPageEditor {
 
@@ -141,7 +138,7 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		this.setSite(site);
 		this.setInput(input);
-		this.setPartProperty("customName", "bizComponentCreate");
+		this.setPartProperty(MrHelper.SAVE_CUSTOM_NAME, TreeMenuEnum.BUSINESS_COMPONENTS.getName());
 		this.myEditorInput = (MrEditorInput) input;
 		this.dataType = this.myEditorInput.getTransferDataBean().getType();
 		modelExploreTreeItem = this.myEditorInput.getTransferDataBean().getTreeListItem();
@@ -229,13 +226,13 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 			if (RegistrationStatusEnum.Registered.getStatus().equals(bc.getRegistrationStatus()) || RegistrationStatusEnum.Obsolete.getStatus().equals(bc.getRegistrationStatus())) {
 				//注册状态为已注册，则内容不可编辑
 				nameText.setEditable(false);
-				nameText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+				nameText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 				documentationText.setEditable(false);
-				documentationText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+				documentationText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 				objectIdentifierText.setEditable(false);
-				objectIdentifierText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+				objectIdentifierText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 				previosDocText.setEditable(false);
-				previosDocText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+				previosDocText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 				addExamplesBtn.setEnabled(false);
 				deleteExamplesBtn.setEnabled(false);
 				addConstraintBtn.setEnabled(false);
@@ -660,9 +657,9 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 						TreeItem[] items = elementsTree.getItems();
 						if(items == null || items.length < 1) {
 							noteLabel = new Label(elementsTree, SWT.NONE);
-							noteLabel.setText(I18nApi.get("tips.bm.error.name.two"));
+							noteLabel.setText(I18nApi.get("tips.bm.error.name.one"));
 							noteLabel.setBounds(10, 5, 200, 30);
-							noteLabel.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+							noteLabel.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 						}
 					}
 				}
@@ -769,9 +766,9 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 		}else {
 			if(bc != null && !RegistrationStatusEnum.Added.getStatus().equals(bc.getRegistrationStatus())) {
 				noteLabel = new Label(elementsTree, SWT.NONE);
-				noteLabel.setText(I18nApi.get("tips.bm.error.name.two"));
+				noteLabel.setText(I18nApi.get("tips.bm.error.name.one"));
 				noteLabel.setBounds(10, 5, 200, 30);
-				noteLabel.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+				noteLabel.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 			}
 		}
 		scrolledComposite.setMinSize(composite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
@@ -879,7 +876,7 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 		Group messageSetsGroup = new Group(groupListComposite, SWT.NONE);
 		messageSetsGroup.setText(I18nApi.get("editor.title.ms"));
 		messageSetsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageSetsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageSetsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageSetsGroup.setLayoutData(groupGridData);
 		messageSetsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageSetTable = new Table(messageSetsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -891,7 +888,7 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 		Group messageDefinitionsGroup = new Group(groupListComposite, SWT.NONE);
 		messageDefinitionsGroup.setText(I18nApi.get("editor.title.md"));
 		messageDefinitionsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageDefinitionsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageDefinitionsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageDefinitionsGroup.setLayoutData(groupGridData);
 		messageDefinitionsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageDefinitionTable = new Table(messageDefinitionsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -903,7 +900,7 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 		Group messageComponentGroup = new Group(groupListComposite, SWT.NONE);
 		messageComponentGroup.setText(I18nApi.get("editor.title.mc"));
 		messageComponentGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageComponentGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageComponentGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageComponentGroup.setLayoutData(groupGridData);
 		messageComponentGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		Table messageComponentTable = new Table(messageComponentGroup, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);
@@ -1622,5 +1619,4 @@ public class BusinessComponentEditor extends MrMultiPageEditor {
 			super.setDirty(dirty);
 		}
 	}
-
 }

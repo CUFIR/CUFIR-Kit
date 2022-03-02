@@ -5,8 +5,6 @@ import lombok.Data;
 
 /**
  * 外部元素
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 @Data
 public class OuterBean {
@@ -15,7 +13,4 @@ public class OuterBean {
 	private String dataType;
 
 	private List<OuterBean> list;
-
-
-	
 }

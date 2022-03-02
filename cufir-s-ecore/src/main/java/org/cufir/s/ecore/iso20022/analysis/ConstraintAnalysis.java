@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析Constraint
- * @author zqh
- *
  */
 public class ConstraintAnalysis {
 

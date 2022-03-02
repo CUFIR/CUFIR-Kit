@@ -11,13 +11,11 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.cufir.s.ecore.bean.EcoreBusinessComponentRL;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 
 /**
  * EcoreBusinessComponentRL数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreBusinessComponentRLImpl{
 

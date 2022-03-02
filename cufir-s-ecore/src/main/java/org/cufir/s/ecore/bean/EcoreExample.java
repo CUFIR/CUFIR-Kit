@@ -2,8 +2,14 @@ package org.cufir.s.ecore.bean;
 
 import java.util.Date;
 
+import org.cufir.s.ide.db.Table;
+import org.cufir.s.ide.db.TableColumn;
+
 import lombok.Data;
 
+/**
+ * ECORE_EXAMPLE
+ */
 @Data
 @Table(name = "ECORE_EXAMPLE", note = "")
 public class EcoreExample {

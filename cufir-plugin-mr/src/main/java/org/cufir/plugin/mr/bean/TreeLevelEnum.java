@@ -2,8 +2,6 @@ package org.cufir.plugin.mr.bean;
 
 /**
  * 树展示层数枚举
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public enum TreeLevelEnum {
 	LEVEL_1("1"),

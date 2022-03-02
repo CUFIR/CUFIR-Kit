@@ -2,7 +2,6 @@ package org.cufir.plugin.mr.editor;
 
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.TextPolicy;
-import org.cufir.plugin.mr.utils.SystemUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -15,9 +14,7 @@ import org.eclipse.swt.widgets.Text;
 import org.springframework.util.StringUtils;
 
 /**
- * Summary文本编辑组件封装
- * @author tangmaoquan
- * @Date 2021年10月15日
+ * 文本编辑组件
  */
 public class SummaryRowTextComposite {
 	
@@ -89,7 +86,7 @@ public class SummaryRowTextComposite {
 			case TextPolicy.TEXT_TITLE_TYPE:
 				//标题
 				nameLabel.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-				nameLabel.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+				nameLabel.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 				nameLabel.setBounds(10, tp.getStartHeight(), 400, 30);
 				break;
 			case TextPolicy.TEXT_NOTE_TYPE:

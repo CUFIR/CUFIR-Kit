@@ -45,8 +45,6 @@ import com.google.common.collect.Table;
 
 /**
  * 报文导出MDR3文件
- * @author tangmaoquan
- * @Date 2021年9月30日
  */
 public class MDR3Mgr {
 	
@@ -158,17 +156,23 @@ public class MDR3Mgr {
 		index = 1;
 		greenComponentMap = new HashMap<>();
 		greenElementMap = HashBasedTable.create();
+		//获取报文展示Traces数据
 		List<EcoreMessageComponentTracesVO> models = getTracesModels(tracesSheet);
+		//设置头部标题展示
 		createTracesHeader(tracesSheet);
 		if(models!=null && !models.isEmpty()) {
 			for(EcoreMessageComponentTracesVO v:models) {
 				if(v.getMessageElementName()==null) {
+					//组件加粗展示
 					setCellValue(tracesSheet, v,modelBoldStartStyle,modelBoldStyle,modelBoldEndStyle);
+					//加入Map做为当前报文标记
 					if(v.getTraceToBusinessComponent() != null) {
 						greenComponentMap.put(v.getTraceToBusinessComponent(), 0);
 					}
 				}else {
+					//元素不加粗
 					setCellValue(tracesSheet, v,modelStartStyle,modelStyle,modelEndStyle);
+					//加入Map做为当前报文标记
 					if(!StringUtils.isEmpty(v.getTraceToBusinessComponent()) && !StringUtils.isEmpty(v.getTraceToElement())) {
 						greenElementMap.put(v.getTraceToBusinessComponent(),v.getTraceToElement(),0);
 					}else if(!StringUtils.isEmpty(v.getTraceToBusinessComponent())){
@@ -187,8 +191,8 @@ public class MDR3Mgr {
 		tracesSheet.autoSizeColumn(6,true);
 		
 		//加入筛选功能
-		CellRangeAddress a = CellRangeAddress.valueOf("A1:F" + (models.size() + 1));
-		tracesSheet.setAutoFilter(a);
+		CellRangeAddress address = CellRangeAddress.valueOf("A1:F" + (models.size() + 1));
+		tracesSheet.setAutoFilter(address);
 	}
 	
 	/**
@@ -200,7 +204,7 @@ public class MDR3Mgr {
 		index=1;
 		fullBusinessModelSheet.setDisplayGridlines(false);
 		createFullBusinessModelHeader(fullBusinessModelSheet);
-		//查询FullBusinessModel所需数据
+		//查询FullBusiness所需数据
 		List<EcoreFullBusinessModelVO> models = getFullBusinessModels();
 		if(models!=null && !models.isEmpty()) {
 			for(EcoreFullBusinessModelVO v:models) {
@@ -232,8 +236,8 @@ public class MDR3Mgr {
 		fullBusinessModelSheet.autoSizeColumn(4,true);
 		fullBusinessModelSheet.autoSizeColumn(5,true);
 		//加入筛选功能
-		CellRangeAddress a = CellRangeAddress.valueOf("A1:F" + (models.size() + 1));
-		fullBusinessModelSheet.setAutoFilter(a);
+		CellRangeAddress address = CellRangeAddress.valueOf("A1:F" + (models.size() + 1));
+		fullBusinessModelSheet.setAutoFilter(address);
 	}
 	
 	/**
@@ -406,6 +410,7 @@ public class MDR3Mgr {
 					emcVo.setTraceToBusinessComponent("");
 					emcVo.setTraceToElement("");
 				}
+				
 				emcVo.setTracePath(me.getTracePath());
 				mctVos.add(emcVo);
 				String type = me.getType();

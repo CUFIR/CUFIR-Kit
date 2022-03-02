@@ -9,15 +9,16 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.apache.commons.collections.map.HashedMap;
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ComboPolicy;
 import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
+import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
+import org.cufir.s.data.vo.EcoreExternalSchemaVO;
 import org.cufir.s.ecore.bean.EcoreConstraint;
 import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreExternalSchema;
@@ -26,8 +27,7 @@ import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.ecore.bean.EcoreNamespaceList;
-import org.cufir.s.ide.utils.i18n.I18nApi;
-import org.cufir.s.data.vo.EcoreExternalSchemaVO;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.swt.SWT;
@@ -52,7 +52,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
@@ -63,8 +62,6 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * ExternalSchemas（自定义数据类型）编辑和显示
- * @author hrj、tangmaoquan
- * @Date 2021年9月29日
  */
 public class ExternalSchemasEditor extends MrMultiPageEditor {
 
@@ -114,7 +111,7 @@ public class ExternalSchemasEditor extends MrMultiPageEditor {
 		this.setInput(input);
 		// 设置标题
 		this.setPartName("");
-		this.setPartProperty("customName", "externalSchemasCreate");
+		this.setPartProperty(MrHelper.SAVE_CUSTOM_NAME, TreeMenuEnum.EXTERNAL_SCHEMAS.getName());
 		this.myEditorInput = (MrEditorInput) input;
 		this.dataType = this.myEditorInput.getTransferDataBean().getType();
 		modelExploreTreeItem = this.myEditorInput.getTransferDataBean().getTreeListItem();
@@ -504,7 +501,7 @@ public class ExternalSchemasEditor extends MrMultiPageEditor {
 		Group messageSetsGroup = new Group(groupListComposite, SWT.NONE);
 		messageSetsGroup.setText(I18nApi.get("editor.title.ms"));
 		messageSetsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageSetsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageSetsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageSetsGroup.setLayoutData(groupGridData);
 		messageSetsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageSetTable = new Table(messageSetsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -516,7 +513,7 @@ public class ExternalSchemasEditor extends MrMultiPageEditor {
 		Group messageDefinitionsGroup = new Group(groupListComposite, SWT.NONE);
 		messageDefinitionsGroup.setText(I18nApi.get("editor.title.md"));
 		messageDefinitionsGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageDefinitionsGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageDefinitionsGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageDefinitionsGroup.setLayoutData(groupGridData);
 		messageDefinitionsGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageDefinitionTable = new Table(messageDefinitionsGroup, SWT.BORDER | SWT.V_SCROLL);
@@ -529,7 +526,7 @@ public class ExternalSchemasEditor extends MrMultiPageEditor {
 		Group messageComponentGroup = new Group(groupListComposite, SWT.NONE);
 		messageComponentGroup.setText(I18nApi.get("editor.title.mc"));
 		messageComponentGroup.setFont(new Font(Display.getCurrent(), new FontData("微软雅黑", 13, SWT.BOLD)));
-		messageComponentGroup.setForeground(SystemUtil.getColor(SWT.COLOR_DARK_BLUE));
+		messageComponentGroup.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE));
 		messageComponentGroup.setLayoutData(groupGridData);
 		messageComponentGroup.setLayout(new FillLayout(SWT.VERTICAL));
 		messageComponentTable = new Table(messageComponentGroup, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);
@@ -801,11 +798,11 @@ public class ExternalSchemasEditor extends MrMultiPageEditor {
 			// TODO Auto-generated method stub
 			//注册状态为已注册，则内容不可编辑
 			nameText.setEditable(false);
-			nameText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+			nameText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 			docText.setEditable(false);
-			docText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+			docText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 			oiText.setEditable(false);
-			oiText.setBackground(SystemUtil.getColor(SWT.COLOR_WHITE));
+			oiText.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 			pcCombo.setEnabled(false);
 			addExamplesBtn.setEnabled(false);
 			deleteExamplesBtn.setEnabled(false);

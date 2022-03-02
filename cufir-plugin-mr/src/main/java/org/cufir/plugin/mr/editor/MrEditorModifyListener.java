@@ -1,18 +1,15 @@
 package org.cufir.plugin.mr.editor;
 
-import org.cufir.plugin.mr.utils.NumberUtil;
+import org.cufir.s.ecore.bean.EcoreConstraint;
+import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
+import org.cufir.s.ide.NumberUtil;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
-
-import org.cufir.s.ecore.bean.EcoreConstraint;
-import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
 /**
  * 编辑监听
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorModifyListener implements ModifyListener{
 

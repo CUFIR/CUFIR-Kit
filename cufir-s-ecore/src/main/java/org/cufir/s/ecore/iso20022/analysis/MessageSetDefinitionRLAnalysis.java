@@ -7,8 +7,6 @@ import org.cufir.s.ecore.bean.EcoreMessageSetDefinitionRL;
 
 /**
  * 解析MessageSetDefinitionRL
- * @author zqh
- *
  */
 public class MessageSetDefinitionRLAnalysis {
 

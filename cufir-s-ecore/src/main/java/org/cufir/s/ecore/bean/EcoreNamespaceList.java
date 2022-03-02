@@ -4,6 +4,9 @@ import java.util.Date;
 
 import lombok.Data;
 
+/**
+ * EcoreNamespaceList
+ */
 @Data
 public class EcoreNamespaceList {
 

@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析Doclet
- * @author zqh
- *
  */
 public class DocletAnalysis {
 

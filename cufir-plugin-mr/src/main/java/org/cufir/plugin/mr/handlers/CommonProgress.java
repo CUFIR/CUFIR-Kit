@@ -5,8 +5,6 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 
 /**
  * 定义一个进度对话框和进度条执行(文件导入的父类)
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public abstract class CommonProgress implements IRunnableWithProgress {
 
@@ -103,7 +101,7 @@ public abstract class CommonProgress implements IRunnableWithProgress {
 	/**
 	 * 启动进程
 	 */
-	public void process() {
+	public void progress() {
 		CommonProgressMonitorDialog dialog = new CommonProgressMonitorDialog(title);
 		try {
 			// 运行

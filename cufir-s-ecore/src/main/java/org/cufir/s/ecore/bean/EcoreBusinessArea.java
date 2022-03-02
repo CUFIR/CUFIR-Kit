@@ -6,8 +6,6 @@ import lombok.Data;
 
 /**
  * 业务域
- * @author tangmaoquan_ntt
- * @since 1.0.0
  */
 @Data
 public class EcoreBusinessArea {

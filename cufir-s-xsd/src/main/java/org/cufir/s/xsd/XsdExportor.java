@@ -4,13 +4,12 @@ package org.cufir.s.xsd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import org.cufir.s.xsd.util.DerbyUtil;
+import org.cufir.s.ide.db.DerbyUtil;
+
 
 
 /**
  * 导出derby数据到本地
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class XsdExportor {
 	
@@ -25,7 +24,6 @@ public class XsdExportor {
 		if (connection == null) {
 			connection = DerbyUtil.getConnection(); // 获得数据库连接
 		}
-//		Statement st=connection.createStatement();
 		ps=connection.prepareStatement("CALL SYSCS_UTIL.SYSCS_EXPORT_TABLE(?,?,?,?,?,?)");
 		ps.setString(1, null);
 		ps.setString(2, "ECORE_MESSAGE_COMPONENT");
@@ -211,34 +209,14 @@ public class XsdExportor {
 		ps.setString(6, null);
 		ps.execute();
 		
-		
-//		ps.setString(1, null);
-//		ps.setString(2, "ECORE_MESSAGE_ELEMENT");
-//		ps.setString(3, "derby.csv");
-//		ps.setString(4, "%");
-//		ps.setString(5, null);
-//		ps.setString(6, null);
-//		ps.execute();
-//		document=(Document) ps.executeQuery();
-//		ps.setString(1, null);
-//		ps.setString(2, "ecore_message_element");
-//		ps.setString(3, "Derby.dat");
-//		ps.setString(4, "%");
-//		ps.setString(5, null);
-//		ps.setString(6, null);
-//		ps.execute();
 		ps.close();
 		connection.close();
 	}
 	
 	public static void main(String[] args) throws Exception {
-//		ByteArrayOutputStream outSteam=new ByteArrayOutputStream();
-//		String content=new String(outSteam.toByteArray(),"utf-8");
-//		String content=document;
 		@SuppressWarnings("unused")
 		String path="D:\\Derby";
 		XsdExportor.exportCsvs();;
-		//writeToDisk(path);
 		System.out.println("导出成功");
 	}
 }

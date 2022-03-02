@@ -1,12 +1,12 @@
 package org.cufir.plugin.mr.view;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.bean.DataTypesEnum;
 import org.cufir.plugin.mr.bean.MrTreeItem;
 import org.cufir.plugin.mr.bean.TransferDataBean;
 import org.cufir.plugin.mr.bean.TreeLevelEnum;
 import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.editor.EditorUtil;
-import org.cufir.plugin.mr.utils.ImgUtil;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Tree;
@@ -16,8 +16,6 @@ import org.cufir.s.data.vo.EcoreTreeNode;
 
 /**
  * BusinessModel树点击监听
- * @author tangmaoquan
- * @Date 2021年9月17日
  */
 public class BusinessModelTreeClickListener implements Listener {
 

@@ -21,8 +21,6 @@ import org.cufir.s.data.dao.impl.EcoreSemanticMarkupImpl;
 
 /**
  * dataImpl管理
- * @author tangmaoquan
- * @Date 2021年10月29日
  */
 public class MrImplManager {
 

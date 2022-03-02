@@ -22,8 +22,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 
 /**
  * 解析MessageElement
- * @author zqh
- *
  */
 public class MessageElementAnalysis {
 

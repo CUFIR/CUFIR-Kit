@@ -6,12 +6,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.cufir.s.ecore.bean.EcoreExample;
-import org.cufir.s.data.util.DbUtil;
+import org.cufir.s.ide.db.DbUtil;
 
 /**
  * EcoreExample数据库操作
- * @author tangmaoquan
- * @Date 2021年11月11日
  */
 public class EcoreExampleImpl{
 	

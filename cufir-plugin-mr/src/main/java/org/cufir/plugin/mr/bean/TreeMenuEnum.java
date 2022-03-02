@@ -1,11 +1,9 @@
 package org.cufir.plugin.mr.bean;
 
-import org.cufir.plugin.mr.utils.ImgUtil;
+import org.cufir.plugin.mr.ImgUtil;
 
 /**
  * 树菜单枚举
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public enum TreeMenuEnum {
 

@@ -7,14 +7,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.cufir.s.ecore.bean.EcoreConstraint;
-import org.cufir.s.data.util.DbUtil;
+import org.cufir.s.ide.db.DbUtil;
 
 import com.alibaba.druid.util.StringUtils;
 
 /**
  * EcoreConstraint数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreConstraintImpl{
 

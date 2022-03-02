@@ -17,26 +17,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.cufir.s.data.Constant;
+import org.cufir.s.data.vo.EcoreCodeVO;
+import org.cufir.s.data.vo.EcoreDataTypeVO;
+import org.cufir.s.data.vo.EcoreTreeNode;
 import org.cufir.s.ecore.bean.EcoreCode;
 import org.cufir.s.ecore.bean.EcoreConstraint;
 import org.cufir.s.ecore.bean.EcoreDataType;
 import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
-import org.cufir.s.data.vo.EcoreCodeVO;
-import org.cufir.s.data.vo.EcoreDataTypeVO;
-import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 
 /**
  * EcoreDataType数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreDataTypeImpl{
 
 	private static Logger logger = Logger.getLogger(EcoreDataTypeImpl.class);
+	
+	private static final String PROVISIONALLY_REGISTERED = "Provisionally Registered";
+	private static final String ADDED_REGISTERED = "Added Registered";
 	
 	private final static String QSQL = "SELECT t.ID,t.DEFINITION,t.NAME,t.REGISTRATION_STATUS,t.REMOVAL_DATE,t.OBJECT_IDENTIFIER,"
 			+ "t.MIN_INCLUSIVE,t.MIN_EXCLUSIVE,t.MAX_INCLUSIVE,t.MAX_EXCLUSIVE,t.PATTERN,t.PREVIOUS_VERSION,t.FRACTION_DIGITS,t.TOTAL_DIGITS,"
@@ -865,7 +865,7 @@ public class EcoreDataTypeImpl{
 			dataType.setNamespaceList(rs.getString("NAMESPACE_LIST"));
 			dataType.setProcessContents(rs.getString("PROCESS_CONTENTS"));
 			dataType.setObjectIdentifier(rs.getString("OBJECT_IDENTIFIER"));
-			dataType.setRegistrationStatus(Constant.PROVISIONALLY_REGISTERED);
+			dataType.setRegistrationStatus(PROVISIONALLY_REGISTERED);
 			dataType.setPreviousVersion(rs.getString("PREVIOUS_VERSION"));
 			dataType.setMinLength(rs.getInt("MIN_LENGTH"));
 			dataType.setMaxLength(rs.getInt("MAX_LENGTH"));
@@ -902,7 +902,7 @@ public class EcoreDataTypeImpl{
 				ec.setExpressionlanguage(rs.getString("expression_language"));
 				ec.setObj_id(newDataTypeId);
 				ec.setObj_type(rs.getString("Obj_type"));
-				ec.setRegistrationStatus(Constant.PROVISIONALLY_REGISTERED);
+				ec.setRegistrationStatus(PROVISIONALLY_REGISTERED);
 				ec.setRemovalDate(rs.getDate("removal_date"));
 				ec.setCreateTime(new java.util.Date());
 				ec.setCreateUser(rs.getString("create_user"));
@@ -998,7 +998,7 @@ public class EcoreDataTypeImpl{
 			me.setName(rs.getString("NAME"));
 			me.setObjectIdentifier(rs.getString("OBJECT_IDENTIFIER"));
 			me.setDefinition(rs.getString("DEFINITION"));
-			me.setRegistrationStatus(Constant.PROVISIONALLY_REGISTERED);
+			me.setRegistrationStatus(PROVISIONALLY_REGISTERED);
 			me.setRemovalDate(rs.getDate("removal_date"));
 			me.setCreateTime(new java.util.Date());
 			me.setCreateUser(rs.getString("create_user"));
@@ -1026,7 +1026,7 @@ public class EcoreDataTypeImpl{
 				ec.setExpressionlanguage(rs.getString("expression_language"));
 				ec.setObj_id(newCodeId);
 				ec.setObj_type(rs.getString("Obj_type"));
-				ec.setRegistrationStatus(Constant.PROVISIONALLY_REGISTERED);
+				ec.setRegistrationStatus(PROVISIONALLY_REGISTERED);
 				ec.setRemovalDate(rs.getDate("removal_date"));
 				ec.setCreateTime(new java.util.Date());
 				ec.setCreateUser(rs.getString("create_user"));
@@ -1109,7 +1109,7 @@ public class EcoreDataTypeImpl{
 			dataType.setNamespaceList(rs.getString("NAMESPACE_LIST"));
 			dataType.setProcessContents(rs.getString("PROCESS_CONTENTS"));
 			dataType.setObjectIdentifier(rs.getString("OBJECT_IDENTIFIER"));
-			dataType.setRegistrationStatus(Constant.ADDED_REGISTERED);
+			dataType.setRegistrationStatus(ADDED_REGISTERED);
 			dataType.setPreviousVersion(rs.getString("PREVIOUS_VERSION"));
 			dataType.setMinLength(rs.getInt("MIN_LENGTH"));
 			dataType.setMaxLength(rs.getInt("MAX_LENGTH"));
@@ -1146,7 +1146,7 @@ public class EcoreDataTypeImpl{
 				ec.setExpressionlanguage(rs.getString("expression_language"));
 				ec.setObj_id(newDataTypeId);
 				ec.setObj_type(rs.getString("Obj_type"));
-				ec.setRegistrationStatus(Constant.PROVISIONALLY_REGISTERED);
+				ec.setRegistrationStatus(PROVISIONALLY_REGISTERED);
 				ec.setRemovalDate(rs.getDate("removal_date"));
 				ec.setCreateTime(new java.util.Date());
 				ec.setCreateUser(rs.getString("create_user"));

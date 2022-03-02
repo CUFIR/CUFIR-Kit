@@ -7,8 +7,6 @@ import org.eclipse.ui.IPersistableElement;
 
 /**
  * 文本编辑器
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorInput implements IEditorInput{
 
@@ -55,8 +53,7 @@ public class MrEditorInput implements IEditorInput{
 	}
 
 	@Override
-	public Object getAdapter(Class adapter) {
-		// TODO Auto-generated method stub
+	public <T> T getAdapter(Class<T> adapter) {
 		return null;
 	}
 

@@ -2,7 +2,7 @@ package org.cufir.plugin.mr.editor;
 
 import java.util.List;
 
-import org.cufir.plugin.mr.utils.ImgUtil;
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.s.ecore.bean.EcoreMessageComponent;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
@@ -12,8 +12,6 @@ import org.eclipse.swt.widgets.TableItem;
 
 /**
  * 构造表格
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class MrEditorTableCreator {
 

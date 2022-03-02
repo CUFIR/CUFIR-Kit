@@ -4,8 +4,6 @@ import lombok.Data;
 
 /**
  * 传输对象
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 @Data
 public class TransferDataBean {

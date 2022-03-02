@@ -2,8 +2,6 @@ package org.cufir.plugin.mr.bean;
 
 /**
  * iso20022元数据解析数据库类型枚举（对应EcoreExample表obj_type字段）
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public enum ObjTypeEnum {
 	DataType("1"),

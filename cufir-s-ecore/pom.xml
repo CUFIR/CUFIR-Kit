@@ -8,6 +8,15 @@
 	<name>cufir-s-ecore</name>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.cufir</groupId>
+			<artifactId>cufir-s-ide</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>

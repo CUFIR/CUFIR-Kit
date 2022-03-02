@@ -6,26 +6,19 @@ import org.osgi.framework.BundleContext;
 
 /**
  * The activator class controls the plug-in life cycle
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
 public class Activator extends AbstractUIPlugin {
 
-//	public final static String CUFIR_NAME = "中国金融业通用报文开发工具";
 	public final static String CUFIR_NAME = "CUFIR Kit";
-
-//	public final static String CUFIR_ABBR = "164";
 
 	public final static String CUFIR_DATE = "since 2019";
 
-	public final static String CUFIR_VERSION = "1.0.0";
+	public final static String CUFIR_VERSION = "2.1.0";
 
 	public final static String CUFIR_URL = "http://192.168.212.221/index";
 
-	// The plug-in ID
-	public static final String PLUGIN_ID = "cufir-rcp-kit"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "cufir-rcp-kit";
 
-	// The shared instance
 	private static Activator plugin;
 
 	/**

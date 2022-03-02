@@ -16,6 +16,11 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
+import org.cufir.s.data.vo.EcoreBusinessComponentVO;
+import org.cufir.s.data.vo.EcoreBusinessElementVO;
+import org.cufir.s.data.vo.EcoreTreeNode;
+import org.cufir.s.data.vo.RemovedObjectVO;
+import org.cufir.s.data.vo.SynonymVO;
 import org.cufir.s.ecore.bean.EcoreBusinessComponent;
 import org.cufir.s.ecore.bean.EcoreBusinessComponentRL;
 import org.cufir.s.ecore.bean.EcoreBusinessElement;
@@ -24,18 +29,11 @@ import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreNextVersions;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkup;
 import org.cufir.s.ecore.bean.EcoreSemanticMarkupElement;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
-import org.cufir.s.data.vo.EcoreBusinessComponentVO;
-import org.cufir.s.data.vo.EcoreBusinessElementVO;
-import org.cufir.s.data.vo.EcoreTreeNode;
-import org.cufir.s.data.vo.RemovedObjectVO;
-import org.cufir.s.data.vo.SynonymVO;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 
 /**
  * EcoreBusinessComponent数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreBusinessComponentImpl {
 
@@ -56,7 +54,7 @@ public class EcoreBusinessComponentImpl {
 	public List<EcoreBusinessComponent> findAll() {
 		return DbUtil.get().find(QSQL + "ORDER BY NAME", EcoreBusinessComponent.class);
 	}
-
+	
 	public Map<String, EcoreBusinessComponent> findMdr3() {
 		String sql = "select t.id,t.name,t.definition from ecore_business_component t order by LOWER(t.name)";
 		List<Map<String, Object>> maps = DbUtil.get().find(sql);

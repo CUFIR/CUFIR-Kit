@@ -4,8 +4,6 @@ import lombok.Data;
 
 /**
  * 树节点数据
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 @Data
 public class TreeItemDataBean {

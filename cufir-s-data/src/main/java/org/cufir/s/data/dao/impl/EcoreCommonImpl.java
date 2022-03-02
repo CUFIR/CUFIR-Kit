@@ -1,11 +1,9 @@
 package org.cufir.s.data.dao.impl;
 
-import org.cufir.s.data.util.DbUtil;
+import org.cufir.s.ide.db.DbUtil;
 
 /**
  * EcoreExample数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreCommonImpl{
 

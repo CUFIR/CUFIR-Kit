@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+import org.cufir.plugin.mr.ImgUtil;
 import org.cufir.plugin.mr.MrHelper;
 import org.cufir.plugin.mr.bean.ButtonPolicy;
 import org.cufir.plugin.mr.bean.ComboPolicy;
@@ -13,9 +14,8 @@ import org.cufir.plugin.mr.bean.ObjTypeEnum;
 import org.cufir.plugin.mr.bean.RegistrationStatusEnum;
 import org.cufir.plugin.mr.bean.TextPolicy;
 import org.cufir.plugin.mr.bean.TransferDataBean;
+import org.cufir.plugin.mr.bean.TreeMenuEnum;
 import org.cufir.plugin.mr.handlers.SaveHandler;
-import org.cufir.plugin.mr.utils.ImgUtil;
-import org.cufir.plugin.mr.utils.SystemUtil;
 import org.cufir.s.data.vo.EcoreBusinessAreaVO;
 import org.cufir.s.data.vo.EcoreTreeNode;
 import org.cufir.s.ecore.bean.EcoreBusinessArea;
@@ -25,10 +25,9 @@ import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreMessageBuildingBlock;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageElement;
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.ModifyEvent;
@@ -38,18 +37,12 @@ import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.ExpandBar;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
@@ -63,8 +56,6 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * BusinessArea（业务领域）编辑和显示
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public class BusinessAreaEditor extends MrMultiPageEditor {
 	
@@ -117,7 +108,7 @@ public class BusinessAreaEditor extends MrMultiPageEditor {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		this.setSite(site);
 		this.setInput(input);
-		this.setPartProperty("customName", "businessAreaCreate");
+		this.setPartProperty(MrHelper.SAVE_CUSTOM_NAME, TreeMenuEnum.BUSINESS_AREAS.getName());
 		this.myEditorInput = (MrEditorInput) input;
 
 		modelExploreTreeItem = this.myEditorInput.getTransferDataBean().getTreeListItem();
@@ -562,7 +553,7 @@ public class BusinessAreaEditor extends MrMultiPageEditor {
 		messageDefinitionWindow.setLayout(new FormLayout());
 
 		// 改变弹窗位置
-		SystemUtil.center(messageDefinitionWindow);
+		MrHelper.center(messageDefinitionWindow);
 
 		Composite c = new Composite(messageDefinitionWindow, SWT.NONE);
 		Text searchText = new Text(c, SWT.BORDER);

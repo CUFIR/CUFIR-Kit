@@ -7,9 +7,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
 /**
- * Summary表格组件封装
- * @author tangmaoquan
- * @Date 2021年10月15日
+ * 表格组件
  */
 public class SummaryTableComposite {
 

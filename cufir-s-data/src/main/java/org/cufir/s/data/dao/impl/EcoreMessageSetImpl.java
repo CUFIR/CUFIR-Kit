@@ -17,14 +17,12 @@ import org.cufir.s.ecore.bean.EcoreExample;
 import org.cufir.s.ecore.bean.EcoreMessageDefinition;
 import org.cufir.s.ecore.bean.EcoreMessageSet;
 import org.cufir.s.ecore.bean.EcoreMessageSetDefinitionRL;
-import org.cufir.s.data.util.DbUtil;
-import org.cufir.s.data.util.DerbyUtil;
+import org.cufir.s.ide.db.DbUtil;
+import org.cufir.s.ide.db.DerbyUtil;
 import org.cufir.s.data.vo.EcoreMessageSetVO;
 
 /**
  * EcoreMessageSet数据库操作
- * @author tangmaoquan
- * @Date 2021年10月15日
  */
 public class EcoreMessageSetImpl{
 

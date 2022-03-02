@@ -12,6 +12,15 @@
 	<packaging>jar</packaging>
 	
 	<dependencies>
+	
+		<dependency>
+			<groupId>org.cufir</groupId>
+			<artifactId>cufir-s-ide</artifactId>
+			<version>1.0.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
 		<dependency>
 		    <groupId>org.eclipse.platform</groupId>
 		    <artifactId>org.eclipse.core.runtime</artifactId>

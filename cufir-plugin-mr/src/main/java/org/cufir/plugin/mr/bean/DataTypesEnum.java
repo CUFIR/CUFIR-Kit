@@ -1,15 +1,11 @@
 package org.cufir.plugin.mr.bean;
 
-import org.cufir.s.ide.utils.i18n.I18nApi;
+import org.cufir.s.ide.i18n.I18nApi;
 
 /**
  * 数据类型枚举
- * @author tangmaoquan
- * @Date 2021年9月29日
  */
 public enum DataTypesEnum {
-	
-//	1:CodeSet;2:Text;3:Boolean,4:Indicator,5:Decimal,6:Rate,7:Amount,8:Quantity,9:Time,10:Binary,11:SchemaType,12:UserDefined
 	/**
 	 * 编辑集
 	 */

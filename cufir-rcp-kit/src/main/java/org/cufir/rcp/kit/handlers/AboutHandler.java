@@ -10,8 +10,6 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * About Handler
- * @author hrj、tangmaoquan
- * @Date 2021年10月15日
  */
 public class AboutHandler extends AbstractHandler {
 
